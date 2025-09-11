@@ -1,0 +1,198 @@
+[
+  {
+    "test_name": "Hemoglobin (Hgb)",
+    "canonical_unit": "g/dL",
+    "ranges": [
+      { "applies": { "sex": "male",   "age_min": 18 }, "low": 13.5, "high": 17.5 },
+      { "applies": { "sex": "female", "age_min": 18 }, "low": 12.0, "high": 15.5 },
+      { "applies": { "sex": "any",    "age_min": 12, "age_max": 17 }, "low": 11.5, "high": 15.5 }
+    ],
+    "advice": {
+      "low": "Improve iron/B12/folate; check for blood loss.",
+      "high": "Hydrate; evaluate hypoxia/altitude; consider polycythemia workup."
+    }
+  },
+  {
+    "test_name": "Hematocrit (Hct)",
+    "canonical_unit": "%",
+    "ranges": [
+      { "applies": { "sex": "male",   "age_min": 18 }, "low": 40, "high": 54 },
+      { "applies": { "sex": "female", "age_min": 18 }, "low": 36, "high": 48 }
+    ],
+    "advice": {
+      "low": "Treat anemia cause; nutrition support.",
+      "high": "Rehydrate; evaluate for polycythemia/hypoxia."
+    }
+  },
+  {
+    "test_name": "Red Blood Cell (RBC) Count",
+    "canonical_unit": "million/µL",
+    "ranges": [
+      { "applies": { "sex": "male",   "age_min": 18 }, "low": 4.5, "high": 5.9 },
+      { "applies": { "sex": "female", "age_min": 18 }, "low": 4.0, "high": 5.1 }
+    ],
+    "advice": {
+      "low": "Assess iron/B12/folate; investigate blood loss.",
+      "high": "Hydrate; assess smoking/altitude; rule out myeloproliferative disease."
+    }
+  },
+  {
+    "test_name": "White Blood Cell (WBC) Count",
+    "canonical_unit": "/µL",
+    "ranges": [
+      { "applies": { "sex": "any", "age_min": 18 }, "low": 4500, "high": 11000 }
+    ],
+    "advice": {
+      "low": "Review meds/illness; infection precautions if severe.",
+      "high": "Look for infection/inflammation; evaluate if markedly elevated."
+    }
+  },
+  {
+    "test_name": "Platelet Count (PLT)",
+    "canonical_unit": "/µL",
+    "ranges": [
+      { "applies": { "sex": "any", "age_min": 18 }, "low": 150000, "high": 400000 }
+    ],
+    "advice": {
+      "low": "Avoid trauma/NSAIDs; evaluate immune/drug causes.",
+      "high": "Treat trigger; consider hematology eval if persistent."
+    }
+  },
+
+  { "test_name": "Glucose (Fasting)", "canonical_unit": "mg/dL",
+    "ranges": [
+      { "applies": { "sex": "any", "age_min": 18 }, "low": 70, "high": 99 }
+    ],
+    "advice": {
+      "high": "Lifestyle (carb control, activity); consider diabetes workup if persistent.",
+      "low": "Use fast-acting carbs; review meds/fasting."
+    }
+  },
+  { "test_name": "Sodium (Serum)", "canonical_unit": "mEq/L",
+    "ranges": [ { "applies": { "sex": "any", "age_min": 18 }, "low": 135, "high": 145 } ],
+    "advice": { "low": "Correct gradually, address cause.", "high": "Rehydrate gradually; reduce excess salt." }
+  },
+  { "test_name": "Potassium (Serum)", "canonical_unit": "mEq/L",
+    "ranges": [ { "applies": { "sex": "any", "age_min": 18 }, "low": 3.7, "high": 5.2 } ],
+    "advice": { "low": "Increase dietary/supplement K+; fix losses.", "high": "Stop K+ sources; urgent lowering if severe." }
+  },
+  { "test_name": "Chloride (Serum)", "canonical_unit": "mEq/L",
+    "ranges": [ { "applies": { "sex": "any", "age_min": 18 }, "low": 96, "high": 106 } ],
+    "advice": { "low": "Correct fluids/electrolytes.", "high": "Restore fluids; address acidosis cause." }
+  },
+  { "test_name": "Bicarbonate (CO2)", "canonical_unit": "mEq/L",
+    "ranges": [ { "applies": { "sex": "any", "age_min": 18 }, "low": 22, "high": 30 } ],
+    "advice": { "low": "Treat acidosis cause.", "high": "Treat alkalosis contributors; adjust diuretics if needed." }
+  },
+  { "test_name": "Calcium (Serum)", "canonical_unit": "mg/dL",
+    "ranges": [ { "applies": { "sex": "any", "age_min": 18 }, "low": 8.5, "high": 10.2 } ],
+    "advice": { "low": "Ensure Ca/Vit D; treat cause.", "high": "Stop excess Ca/Vit D; hydrate; treat cause." }
+  },
+  { "test_name": "Blood Urea Nitrogen (BUN)", "canonical_unit": "mg/dL",
+    "ranges": [ { "applies": { "sex": "any", "age_min": 18 }, "low": 7, "high": 21 } ],
+    "advice": { "high": "Hydrate; evaluate renal status/protein load." }
+  },
+  { "test_name": "Creatinine (Serum)", "canonical_unit": "mg/dL",
+    "ranges": [
+      { "applies": { "sex": "male",   "age_min": 18 }, "low": 0.7, "high": 1.2 },
+      { "applies": { "sex": "female", "age_min": 18 }, "low": 0.6, "high": 1.0 }
+    ],
+    "advice": { "high": "Control BP/glucose; hydrate; avoid nephrotoxins; consider nephrology if persistent." }
+  },
+
+  { "test_name": "ALT (Alanine Aminotransferase)", "canonical_unit": "U/L",
+    "ranges": [ { "applies": { "sex": "any", "age_min": 18 }, "low": 7, "high": 55 } ],
+    "advice": { "high": "Limit alcohol/hepatotoxins; evaluate hepatitis/NAFLD." }
+  },
+  { "test_name": "AST (Aspartate Aminotransferase)", "canonical_unit": "U/L",
+    "ranges": [ { "applies": { "sex": "any", "age_min": 18 }, "low": 8, "high": 48 } ],
+    "advice": { "high": "Assess liver/muscle/heart causes." }
+  },
+  { "test_name": "Alkaline Phosphatase (ALP)", "canonical_unit": "U/L",
+    "ranges": [ { "applies": { "sex": "any", "age_min": 18 }, "low": 40, "high": 147 } ],
+    "advice": { "high": "Differentiate liver vs bone; evaluate obstruction or bone disease." }
+  },
+  { "test_name": "Bilirubin (Total)", "canonical_unit": "mg/dL",
+    "ranges": [ { "applies": { "sex": "any", "age_min": 18 }, "low": 0.1, "high": 1.2 } ],
+    "advice": { "high": "Assess hepatic function/hemolysis; consider Gilbert’s if mild isolated rise." }
+  },
+  { "test_name": "Albumin (Serum)", "canonical_unit": "g/dL",
+    "ranges": [ { "applies": { "sex": "any", "age_min": 18 }, "low": 3.5, "high": 5.0 } ],
+    "advice": { "low": "Review nutrition/liver/kidney; optimize protein intake." }
+  },
+
+  { "test_name": "Total Cholesterol", "canonical_unit": "mg/dL",
+    "ranges": [ { "applies": { "sex": "any", "age_min": 18 }, "high": 200 } ],
+    "advice": { "high": "Heart-healthy diet, exercise; consider meds per risk profile." }
+  },
+{
+  "test_name": "LDL Cholesterol",
+  "canonical_unit": "mg/dL",
+  "ranges": [
+    { "applies": { "sex": "any", "age_min": 18 }, "low": 0, "high": 99 }
+  ],
+  "advice": { "high": "Lifestyle changes; consider statins per risk profile." }
+},
+  {
+  "test_name": "HDL Cholesterol",
+  "canonical_unit": "mg/dL",
+  "ranges": [
+    { "applies": { "sex": "male",   "age_min": 18 }, "low": 40, "high": 999 },
+    { "applies": { "sex": "female", "age_min": 18 }, "low": 50, "high": 1.0 }
+  ],
+  "advice": { "low": "Exercise; healthy fats; avoid smoking. (≥60 is generally protective)" }
+},
+  {
+  "test_name": "Triglycerides (TG)",
+  "canonical_unit": "mg/dL",
+  "ranges": [
+    { "applies": { "sex": "any", "age_min": 18 }, "low": 0, "high": 149 }
+  ],
+  "advice": { "high": "Cut sugars/alcohol; weight loss; exercise; meds if very high." }
+},
+
+  { "test_name": "TSH (Thyroid Stimulating Hormone)", "canonical_unit": "mIU/L",
+    "ranges": [
+      { "applies": { "sex": "any", "age_min": 18 }, "low": 0.4, "high": 4.0 }
+    ],
+    "advice": {
+      "high": "Consider hypothyroidism evaluation.",
+      "low": "Consider hyperthyroidism evaluation; manage symptoms."
+    }
+  },
+
+  {
+  "test_name": "Vitamin D (25-OH)",
+  "canonical_unit": "ng/mL",
+  "ranges": [
+    { "applies": { "sex": "any", "age_min": 18 }, "low": 30, "high": 100 }
+  ],
+  "advice": { "low": "Supplement 1–2k IU/day; sun exposure; recheck in 3–6 months." }
+},
+  { "test_name": "Vitamin B12", "canonical_unit": "pg/mL",
+    "ranges": [
+      { "applies": { "sex": "any", "age_min": 18 }, "low": 200, "high": 900 }
+    ],
+    "advice": { "low": "Oral/injectable B12; treat cause (diet/absorption)." }
+  },
+  { "test_name": "Iron (Serum)", "canonical_unit": "µg/dL",
+    "ranges": [ { "applies": { "sex": "any", "age_min": 18 }, "low": 60, "high": 170 } ],
+    "advice": { "low": "Oral iron + vitamin C; investigate blood loss.", "high": "Stop supplements; assess overload." }
+  },
+  { "test_name": "Ferritin", "canonical_unit": "ng/mL",
+    "ranges": [
+      { "applies": { "sex": "male",   "age_min": 18 }, "low": 30, "high": 400 },
+      { "applies": { "sex": "female", "age_min": 18 }, "low": 13, "high": 150 }
+    ],
+    "advice": { "low": "Replete iron stores and recheck.", "high": "Assess inflammation/overload; consider phlebotomy if indicated." }
+  },
+
+ {
+  "test_name": "Kidney Function (eGFR)",
+  "canonical_unit": "mL/min/1.73m²",
+  "ranges": [
+    { "applies": { "sex": "any", "age_min": 18 }, "low": 90 }
+  ],
+  "advice": { "low": "Optimize BP/glucose; avoid nephrotoxins; nephrology if <60 and progressive." }
+}
+]
