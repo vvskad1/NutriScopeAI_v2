@@ -1,0 +1,70 @@
+[
+  {
+    "test_name": "Hemoglobin (Hgb)",
+    "units": [
+      {
+        "unit": "g/dL",
+        "ranges": [
+          { "applies": { "sex": "male", "age_min": 18 }, "low": 13.5, "high": 17.5 },
+          { "applies": { "sex": "female", "age_min": 18 }, "low": 12.0, "high": 15.5 },
+          { "applies": { "sex": "any", "age_min": 12, "age_max": 17 }, "low": 11.5, "high": 15.5 }
+        ]
+      },
+      {
+        "unit": "mmol/L",
+        "ranges": [
+          { "applies": { "sex": "male", "age_min": 18 }, "low": 8.4, "high": 10.8 },
+          { "applies": { "sex": "female", "age_min": 18 }, "low": 7.4, "high": 9.6 }
+        ]
+      }
+    ],
+    "advice": {
+      "low": "Improve iron/B12/folate; check for blood loss.",
+      "high": "Hydrate; evaluate hypoxia/altitude; consider polycythemia workup."
+    }
+  },
+  {
+    "test_name": "Red Blood Cell (RBC) Count",
+    "units": [
+      {
+        "unit": "million/µL",
+        "ranges": [
+          { "applies": { "sex": "male", "age_min": 18 }, "low": 4.5, "high": 5.9 },
+          { "applies": { "sex": "female", "age_min": 18 }, "low": 4.0, "high": 5.1 }
+        ]
+      },
+      {
+        "unit": "10^12/L",
+        "ranges": [
+          { "applies": { "sex": "male", "age_min": 18 }, "low": 4.5, "high": 5.9 },
+          { "applies": { "sex": "female", "age_min": 18 }, "low": 4.0, "high": 5.1 }
+        ]
+      }
+    ],
+    "advice": {
+      "low": "Assess iron/B12/folate; investigate blood loss.",
+      "high": "Hydrate; assess smoking/altitude; rule out myeloproliferative disease."
+    }
+  },
+  {
+    "test_name": "White Blood Cell (WBC) Count",
+    "units": [
+      {
+        "unit": "/µL",
+        "ranges": [
+          { "applies": { "sex": "any", "age_min": 18 }, "low": 4500, "high": 11000 }
+        ]
+      },
+      {
+        "unit": "10^9/L",
+        "ranges": [
+          { "applies": { "sex": "any", "age_min": 18 }, "low": 4.5, "high": 11.0 }
+        ]
+      }
+    ],
+    "advice": {
+      "low": "Review meds/illness; infection precautions if severe.",
+      "high": "Look for infection/inflammation; evaluate if markedly elevated."
+    }
+  }
+]

@@ -1,0 +1,14 @@
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+pydantic==2.8.2
+python-multipart==0.0.9
+
+# PDF / OCR (native PDF first; OCR as fallback)
+pymupdf==1.24.9     # PyMuPDF
+pytesseract==0.3.10 # optional, used only if image/scan fallback
+Pillow==10.4.0
+opencv-python==4.10.0.84
+
+# Optional (only if you use Groq summaries)
+httpx==0.27.0
+groq==0.13.1

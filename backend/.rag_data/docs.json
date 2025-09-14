@@ -1,0 +1,811 @@
+[
+  {
+    "id": "groq_test",
+    "test_name": "test",
+    "unit": "mg/dL",
+    "ranges": [
+      {
+        "low": 0,
+        "high": 8
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_hemoglobin",
+    "test_name": "hemoglobin",
+    "unit": "g/dL",
+    "ranges": [
+      {
+        "low": 13.5,
+        "high": 17.5
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_vldl",
+    "test_name": "vldl",
+    "unit": "mg/dL",
+    "ranges": [
+      {
+        "low": 5,
+        "high": 30
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_s. bilirubin t",
+    "test_name": "s. bilirubin t",
+    "unit": "mg/dL",
+    "ranges": [
+      {
+        "low": 0.1,
+        "high": 1.2
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_0.3 -",
+    "test_name": "0.3 -",
+    "unit": "mg/dL",
+    "ranges": [
+      {
+        "low": 0.0,
+        "high": 0.3
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_s. bilirubin d",
+    "test_name": "s. bilirubin d",
+    "unit": "mg/dL",
+    "ranges": [
+      {
+        "low": 0.1,
+        "high": 1.2
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_sgot/ast",
+    "test_name": "sgot/ast",
+    "unit": "U/L",
+    "ranges": [
+      {
+        "low": 0,
+        "high": 40
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_sgpt /alt",
+    "test_name": "sgpt /alt",
+    "unit": "U/L",
+    "ranges": [
+      {
+        "low": 0,
+        "high": 40
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_s.alkaline phosphatase",
+    "test_name": "s.alkaline phosphatase",
+    "unit": "U/L",
+    "ranges": [
+      {
+        "low": 30,
+        "high": 120
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_30 -",
+    "test_name": "30 -",
+    "unit": "mmol/L",
+    "ranges": [
+      {
+        "low": 3.6,
+        "high": 5.8
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_red blood cell (rbc)",
+    "test_name": "red blood cell (rbc)",
+    "unit": "10^12/L",
+    "ranges": [
+      {
+        "low": 4.32,
+        "high": 5.72
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_mcv",
+    "test_name": "mcv",
+    "unit": "fL",
+    "ranges": [
+      {
+        "low": 80,
+        "high": 100
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_mch",
+    "test_name": "mch",
+    "unit": "pg",
+    "ranges": [
+      {
+        "low": 26.5,
+        "high": 33.5
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_mchc",
+    "test_name": "mchc",
+    "unit": "g/dL",
+    "ranges": [
+      {
+        "low": 34.0,
+        "high": 36.0
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_rdw",
+    "test_name": "rdw",
+    "unit": "%",
+    "ranges": [
+      {
+        "low": 11.8,
+        "high": 14.5
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_mpv",
+    "test_name": "mpv",
+    "unit": "fL",
+    "ranges": [
+      {
+        "low": 7.5,
+        "high": 11.5
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_e\nneutrophil (neut)",
+    "test_name": "e\nneutrophil (neut)",
+    "unit": "%",
+    "ranges": [
+      {
+        "low": 40,
+        "high": 70
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_lymphocytes %",
+    "test_name": "lymphocytes %",
+    "unit": "%",
+    "ranges": [
+      {
+        "low": 20,
+        "high": 40
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_monocytes %",
+    "test_name": "monocytes %",
+    "unit": "%",
+    "ranges": [
+      {
+        "low": 4,
+        "high": 10
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_eosinophils %",
+    "test_name": "eosinophils %",
+    "unit": "cells/\u03bcL",
+    "ranges": [
+      {
+        "low": 0,
+        "high": 500
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_basophils %",
+    "test_name": "basophils %",
+    "unit": "%",
+    "ranges": [
+      {
+        "low": 0.5,
+        "high": 1.0
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_name: doe, john q. age/sex:",
+    "test_name": "name: doe, john q. age/sex:",
+    "unit": "Not provided",
+    "ranges": [
+      {
+        "test": "White Blood Cell Count",
+        "low": 3.5,
+        "high": 12.5,
+        "unit": "x10^9/L"
+      },
+      {
+        "test": "Red Blood Cell Count",
+        "low": 4.32,
+        "high": 5.72,
+        "unit": "x10^12/L"
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_patient id:",
+    "test_name": "patient id:",
+    "unit": "No unit",
+    "ranges": [
+      {
+        "low": "N/A",
+        "high": "N/A"
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_spec #:",
+    "test_name": "spec #:",
+    "unit": "g/dL",
+    "ranges": [
+      {
+        "low": 6.4,
+        "high": 8.3
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_received date/time:",
+    "test_name": "received date/time:",
+    "unit": "Date and Time",
+    "ranges": [
+      {
+        "low": "N/A",
+        "high": "N/A"
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_specimen:",
+    "test_name": "specimen:",
+    "unit": "Not applicable",
+    "ranges": [
+      {
+        "low": "N/A",
+        "high": "N/A"
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_white blood cell (wbc)",
+    "test_name": "white blood cell (wbc)",
+    "unit": "cells/\u03bcL (microliter)",
+    "ranges": [
+      {
+        "age_group": "adults",
+        "low": 4500,
+        "high": 11000
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_a\nplatelet count",
+    "test_name": "a\nplatelet count",
+    "unit": "10^9/L",
+    "ranges": [
+      {
+        "low": 150,
+        "high": 450
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_absolute neutrophils",
+    "test_name": "absolute neutrophils",
+    "unit": "cells/\u03bcL",
+    "ranges": [
+      {
+        "low": 1500,
+        "high": 8000
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_absolute lymphocytes",
+    "test_name": "absolute lymphocytes",
+    "unit": "cells/\u03bcL",
+    "ranges": [
+      {
+        "low": 500,
+        "high": 4800
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_absolute monocytes",
+    "test_name": "absolute monocytes",
+    "unit": "cells/\u03bcL",
+    "ranges": [
+      {
+        "low": 0,
+        "high": 600
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_absolute eosinophils",
+    "test_name": "absolute eosinophils",
+    "unit": "cells/\u03bcL",
+    "ranges": [
+      {
+        "low": 0,
+        "high": 500
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_absolute basophils",
+    "test_name": "absolute basophils",
+    "unit": "cells/\u03bcL",
+    "ranges": [
+      {
+        "low": 0,
+        "high": 100
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_random blood glucose",
+    "test_name": "random blood glucose",
+    "unit": "mmol/L",
+    "ranges": [
+      {
+        "low": 3.9,
+        "high": 7.1
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_74 -",
+    "test_name": "74 -",
+    "unit": "mU/L",
+    "ranges": [
+      {
+        "low": 2.5,
+        "high": 10.0
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_interpretation 1. vitamin d is a steroid hormone involved in the intestinal absorption of calcium and the regulation of calcium",
+    "test_name": "interpretation 1. vitamin d is a steroid hormone involved in the intestinal absorption of calcium and the regulation of calcium",
+    "unit": "ng/mL",
+    "ranges": [
+      {
+        "low": 20,
+        "high": 29
+      },
+      {
+        "low": 30,
+        "high": 50
+      },
+      {
+        "low": 51,
+        "high": 100
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_homeostasis. vitamin d is essential for the formation and maintenance of strong, healthy bones. 2. vitamin d",
+    "test_name": "homeostasis. vitamin d is essential for the formation and maintenance of strong, healthy bones. 2. vitamin d",
+    "unit": "ng/mL",
+    "ranges": [
+      {
+        "low": 20,
+        "high": 29
+      },
+      {
+        "low": 30,
+        "high": 50
+      },
+      {
+        "low": 51,
+        "high": 100
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_120 -",
+    "test_name": "120 -",
+    "unit": "mmol/L",
+    "ranges": [
+      {
+        "low": 3.5,
+        "high": 5.5
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_the formation of of myelin, and along with folate is required for dna synthesis. the most prominent source of b",
+    "test_name": "the formation of of myelin, and along with folate is required for dna synthesis. the most prominent source of b",
+    "unit": "ng/mL",
+    "ranges": [
+      {
+        "low": 200,
+        "high": 450
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_blood urea",
+    "test_name": "blood urea",
+    "unit": "mg/dL",
+    "ranges": [
+      {
+        "low": 6,
+        "high": 24
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_17 -",
+    "test_name": "17 -",
+    "unit": "mg/dL",
+    "ranges": [
+      {
+        "low": 0,
+        "high": 8
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_s.creatinine",
+    "test_name": "s.creatinine",
+    "unit": "mg/dL",
+    "ranges": [
+      {
+        "low": 0.6,
+        "high": 1.2
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_0.7 -",
+    "test_name": "0.7 -",
+    "unit": "mg/dL",
+    "ranges": [
+      {
+        "low": 0.0,
+        "high": 0.7
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_s. calcium",
+    "test_name": "s. calcium",
+    "unit": "mg/dL",
+    "ranges": [
+      {
+        "low": 8.6,
+        "high": 10.3
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_8.8 -",
+    "test_name": "8.8 -",
+    "unit": "g/dL",
+    "ranges": [
+      {
+        "low": 13.5,
+        "high": 17.5
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_t3 - total",
+    "test_name": "t3 - total",
+    "unit": "ng/dL",
+    "ranges": [
+      {
+        "low": 80,
+        "high": 200
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_0.60",
+    "test_name": "0.60",
+    "unit": "mg/dL",
+    "ranges": [
+      {
+        "low": 0.3,
+        "high": 0.7
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_a/g ratio",
+    "test_name": "a/g ratio",
+    "unit": "unitless ratio",
+    "ranges": [
+      {
+        "low": 1.0,
+        "high": 2.5
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_1.0 -",
+    "test_name": "1.0 -",
+    "unit": "g/dL",
+    "ranges": [
+      {
+        "low": 13.5,
+        "high": 17.5
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_s.uric acid",
+    "test_name": "s.uric acid",
+    "unit": "mg/dL",
+    "ranges": [
+      {
+        "low": 3.5,
+        "high": 7.2
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_3.5 -",
+    "test_name": "3.5 -",
+    "unit": "g/dL",
+    "ranges": [
+      {
+        "low": 3.4,
+        "high": 5.4
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_13.0 -",
+    "test_name": "13.0 -",
+    "unit": "g/dL",
+    "ranges": [
+      {
+        "low": 13.0,
+        "high": 15.5
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_40 -",
+    "test_name": "40 -",
+    "unit": "mmol/L",
+    "ranges": [
+      {
+        "low": 3.5,
+        "high": 5.5
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_83 -",
+    "test_name": "83 -",
+    "unit": "mU/L",
+    "ranges": [
+      {
+        "low": 4.6,
+        "high": 8.5
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_27 -",
+    "test_name": "27 -",
+    "unit": "U/L",
+    "ranges": [
+      {
+        "low": 0,
+        "high": 55
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_31.5 -",
+    "test_name": "31.5 -",
+    "unit": "mg/dL",
+    "ranges": [
+      {
+        "low": 20,
+        "high": 40
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  }
+]
