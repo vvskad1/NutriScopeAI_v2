@@ -170,11 +170,11 @@
   {
     "id": "groq_mch",
     "test_name": "mch",
-    "unit": "pg",
+    "unit": "pg/cell",
     "ranges": [
       {
-        "low": 26.5,
-        "high": 33.5
+        "low": 27.0,
+        "high": 31.0
       }
     ],
     "source": "groq_llm",

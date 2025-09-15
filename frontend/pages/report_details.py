@@ -25,24 +25,80 @@ def report(rid: str):
                         {'name': 'importance', 'label': 'Why Important', 'field': 'importance', 'sortable': False},
                         {'name': 'reason', 'label': 'Reason for High/Low', 'field': 'reason', 'sortable': False},
                         {'name': 'risks', 'label': 'Risks', 'field': 'risks', 'sortable': False},
-                        {'name': 'improvements', 'label': 'Improvements', 'field': 'improvements', 'sortable': False},
                     ]
+                    ui.add_head_html('<style>.q-table th, .q-table__th { font-weight: bold !important; }</style>')
                     rows = []
+                    import re
+                    def clean_llm_text(val):
+                        if not isinstance(val, str):
+                            return val
+                        def collapse_single_chars(s):
+                            return re.sub(r'(?:\b\w\b[ ]*){2,}', lambda m: m.group(0).replace(' ', ''), s)
+                        prev = None
+                        while prev != val:
+                            prev = val
+                            val = collapse_single_chars(val)
+                        val = re.sub(r'(?<=\b\w) (?=\w\b)', '', val)
+                        val = re.sub(r'\s{2,}', ' ', val)
+                        return val.strip()
+
+                    def is_concatenated(text):
+                        # Heuristic: if there are more than 20 letters in a row with no space, flag as concatenated
+                        return bool(re.search(r'[a-zA-Z]{20,}', text))
+                    warning_shown = False
                     for t in per_test:
+                        test = clean_llm_text((t.get('test') or t.get('name') or t.get('title') or 'Unknown Test') + f" ({t.get('value','')} {t.get('unit','')})")
+                        status = clean_llm_text(t.get('status','').capitalize())
+                        importance = clean_llm_text(t.get('importance',''))
+                        # Support both new and old backend formats
+                        status_lower = t.get('status','').lower()
+                        reason = ''
+                        if 'reason' in t and isinstance(t['reason'], str) and t['reason']:
+                            reason = clean_llm_text(t['reason'])
+                        elif status_lower == 'low' and t.get('reason_low'):
+                            reason = clean_llm_text(str(t['reason_low']))
+                        elif status_lower == 'high' and t.get('reason_high'):
+                            reason = clean_llm_text(str(t['reason_high']))
+                        risks = ''
+                        if 'risks' in t and isinstance(t['risks'], str) and t['risks']:
+                            risks = clean_llm_text(t['risks'])
+                        # For legacy support, also check risks_if_low/risks_if_high
+                        elif status_lower == 'low' and t.get('risks_if_low'):
+                            risks = clean_llm_text(str(t['risks_if_low']))
+                        elif status_lower == 'high' and t.get('risks_if_high'):
+                            risks = clean_llm_text(str(t['risks_if_high']))
+                        if (is_concatenated(reason) or is_concatenated(risks)) and not warning_shown:
+                            ui.notify('⚠️ Some AI-generated text is not readable. Please try regenerating the report or contact support.', color='warning')
+                            warning_shown = True
                         rows.append({
-                            'test': (t.get('test') or t.get('name') or t.get('title') or 'Unknown Test') + f" ({t.get('value','')} {t.get('unit','')})",
-                            'status': t.get('status','').capitalize(),
-                            'importance': t.get('importance',''),
-                            'reason': '\n'.join(t.get('why_low',[]) if t.get('status','').lower() == 'low' else t.get('why_high',[])),
-                            'risks': '\n'.join(t.get('risks_if_low',[]) if t.get('status','').lower() == 'low' else t.get('risks_if_high',[])),
-                            'improvements': '\n'.join(t.get('next_steps',[])),
+                            'test': test,
+                            'status': status,
+                            'importance': importance,
+                            'reason': reason,
+                            'risks': risks,
                         })
+                    # Add custom CSS for table cell wrapping and normal font style (force inherit from table)
+                    ui.add_head_html('''<style>
+                        .q-table__td, .q-table__td * {
+                            white-space: pre-line;
+                            word-break: break-word;
+                            font-family: inherit;
+                            font-size: inherit;
+                            font-weight: inherit;
+                            letter-spacing: normal;
+                        }
+                        .q-table {
+                            font-family: Arial, Helvetica, sans-serif;
+                            font-size: 1rem;
+                            font-weight: 400;
+                        }
+                    </style>''')
                     with ui.table(
                         columns=columns,
                         rows=rows,
                         row_key='test',
-                    ):
-                        pass
+                        ) as table:
+                        table.props('wrap-cells')
                 ui.markdown(f"<div class='text-xs text-slate-500 mt-4'>{disclaimer}</div>")
             else:
                 ui.label('No summary yet.').classes('text-slate-500')
@@ -68,7 +124,8 @@ def add_meal_plan_card(rep):
                         ui.label('Why this meal:').classes('font-medium text-yellow-700 mt-2')
                         ui.label(meal['why_this_meal']).classes('text-slate-700')
                     if meal.get('for_tests'):
-                        ui.label('Supports tests: ' + ', '.join(meal['for_tests'])).classes('text-xs text-yellow-600 mt-1')
+                        for_tests_list = [str(x) for x in meal['for_tests']]
+                        ui.label('Supports tests: ' + ', '.join(for_tests_list)).classes('text-xs text-yellow-600 mt-1')
         else:
             with ui.row().classes('justify-center'):
                 ui.icon('warning').classes('text-yellow-500 text-2xl')

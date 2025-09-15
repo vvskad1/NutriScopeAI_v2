@@ -240,34 +240,68 @@ def _fallback_summary(context: Dict[str, Any], results: List[Dict[str, Any]]) ->
 
     per = []
     fallback_meals = []
-    for r in flagged:
-        test = r["test"]
-        kbs = _kb_snippet(test)
-        status_text = r["status"].replace("_", " ")
-        rng = r.get("applied_range", {})
-        if rng.get("low") is not None and rng.get("high") is not None:
-            rng_text = f"{rng['low']}–{rng['high']} ({rng.get('source', 'KB')})"
-        elif rng.get("low") is not None:
-            rng_text = f"≥{rng['low']} ({rng.get('source', 'KB')})"
-        elif rng.get("high") is not None:
-            rng_text = f"≤{rng['high']} ({rng.get('source', 'KB')})"
-        else:
-            rng_text = "not available"
-
-        per.append({
-            "test": test,
-            "value": r.get("value"),
-            "unit": r.get("unit"),
-            "status": status_text,
-            "range": rng_text,
-            "importance": kbs.get("importance", ""),
-            "reasons": kbs.get("causes", [])[:4],
-            "next_steps": (
-                [kbs.get("advice", {}).get("low")] if "low" in r["status"] and kbs.get("advice", {}).get("low") else []
-            ) or (
-                [kbs.get("advice", {}).get("high")] if "high" in r["status"] and kbs.get("advice", {}).get("high") else []
+    # Always call LLM for every test to generate all fields
+    try:
+        key = _get_groq_key() if "_get_groq_key" in globals() else os.getenv("GROQ_API_KEY", "").strip()
+        client = Groq(api_key=key)
+        model = resolve_model(client)
+        for r in flagged:
+            test = r["test"]
+            status_text = r["status"].replace("_", " ")
+            rng = r.get("applied_range", {})
+            if rng.get("low") is not None and rng.get("high") is not None:
+                rng_text = f"{rng['low']}–{rng['high']} ({rng.get('source', 'KB')})"
+            elif rng.get("low") is not None:
+                rng_text = f"≥{rng['low']} ({rng.get('source', 'KB')})"
+            elif rng.get("high") is not None:
+                rng_text = f"≤{rng['high']} ({rng.get('source', 'KB')})"
+            else:
+                rng_text = "not available"
+            prompt = (
+                f"Lab test: {test} ({r.get('value','')} {r.get('unit','')}), status: {status_text}.\n"
+                "Please provide the following as clear, readable English sentences: "
+                f"1) Why Important: What is the importance of this test?\n"
+                f"2) Reason for High/Low: What are the common reasons for abnormal results?\n"
+                f"3) Risks: What are the risks if the result is abnormal?\n"
+                "Return a JSON object with keys: importance, reason, risks."
             )
-        })
+            try:
+                completion = client.chat.completions.create(
+                    model=model,
+                    messages=[
+                        {"role": "system", "content": "You are a medical AI assistant. Return ONLY valid JSON with keys: importance, reason, risks. No prose."},
+                        {"role": "user", "content": prompt},
+                    ],
+                    temperature=0.2,
+                    max_tokens=300,
+                    response_format={"type": "json_object"},
+                )
+                content = completion.choices[0].message.content.strip()
+                ai_data = json.loads(content)
+                per.append({
+                    "test": test,
+                    "value": r.get("value"),
+                    "unit": r.get("unit"),
+                    "status": status_text,
+                    "range": rng_text,
+                    "importance": ai_data.get("importance", ""),
+                    "reason": ai_data.get("reason", ""),
+                    "risks": ai_data.get("risks", ""),
+                })
+            except Exception as e:
+                print(f"[GROQ][per_test fallback] Exception for {test}: {e}")
+                per.append({
+                    "test": test,
+                    "value": r.get("value"),
+                    "unit": r.get("unit"),
+                    "status": status_text,
+                    "range": rng_text,
+                    "importance": f"No AI explanation available for {test}.",
+                    "reason": f"No AI reason available for {test}.",
+                    "risks": f"No AI risks available for {test}.",
+                })
+    except Exception as e:
+        print(f"[GROQ][per_test fallback] LLM client error: {e}")
 
         # Fallback meal ideas per test
         test_lc = test.lower()
@@ -381,9 +415,11 @@ def _groq_structured_summary(context: Dict[str, Any], results: List[Dict[str, An
         return False, {}
 
     sys_text = (
-        "IMPORTANT: Return ONLY a JSON object with a 'diet_plan' key containing a 'meals' list (at least 3 meal ideas, never empty).\n"
-        "Example format: { 'diet_plan': { 'meals': [ { 'name': 'Meal 1', 'ingredients': [...], 'instructions': '...', 'why_this_meal': '...', 'for_tests': [...] }, ... ] } }\n"
+        "IMPORTANT: Return ONLY a JSON object with a 'diet_plan' key containing a 'meals' list (at least 3 meal ideas, never empty), and a 'per_test' list with an entry for every test in the input.\n"
+        "For each test in 'per_test', generate all fields (importance, reason, risks, etc.) as clear, readable, normal English sentences, even if the knowledge base is empty. Do NOT leave any field blank.\n"
+        "Example format: { 'diet_plan': { 'meals': [ { 'name': 'Meal 1', 'ingredients': [...], 'instructions': '...', 'why_this_meal': '...', 'for_tests': [...] }, ... ] }, 'per_test': [ { 'test': 'Vitamin D', 'importance': 'Vitamin D is important for...', 'reason': 'Low levels may be due to...', 'risks': 'Risks include...' }, ... ] }\n"
         "Each meal must have: 'name', 'ingredients', 'instructions', 'why_this_meal', and 'for_tests'.\n"
+        "Each per_test entry must have: 'test', 'importance', 'reason', 'risks', and other relevant fields.\n"
         "Do NOT include any other keys, text, or explanation."
     )
 
@@ -439,6 +475,82 @@ def _groq_structured_summary(context: Dict[str, Any], results: List[Dict[str, An
         print("[GROQ][DEBUG] LLM meal plan only:", json.dumps(meal_plan, indent=2, ensure_ascii=False))
         data.setdefault("diet_plan", {"add": [], "limit": []})
         data.setdefault("per_test", [])
+        # Ensure every test in the input has a per_test entry with all required fields, and all are AI-generated
+        input_tests = [r["test"] for r in results]
+        per_test_dict = {p.get("test"): p for p in data["per_test"]}
+        required_fields = ["test", "importance", "reason", "risks"]
+        key = _get_groq_key() if "_get_groq_key" in globals() else os.getenv("GROQ_API_KEY", "").strip()
+        client = Groq(api_key=key)
+        model = resolve_model(client)
+        for test in input_tests:
+            missing = False
+            if test not in per_test_dict:
+                missing = True
+            else:
+                for field in required_fields:
+                    if field not in per_test_dict[test] or not per_test_dict[test][field]:
+                        missing = True
+                        break
+            if missing:
+                # Re-call LLM for just this test to fill in missing data
+                r = next((x for x in results if x["test"] == test), None)
+                if r:
+                    status_text = r["status"].replace("_", " ")
+                    rng = r.get("applied_range", {})
+                    if rng.get("low") is not None and rng.get("high") is not None:
+                        rng_text = f"{rng['low']}–{rng['high']} ({rng.get('source', 'KB')})"
+                    elif rng.get("low") is not None:
+                        rng_text = f"≥{rng['low']} ({rng.get('source', 'KB')})"
+                    elif rng.get("high") is not None:
+                        rng_text = f"≤{rng['high']} ({rng.get('source', 'KB')})"
+                    else:
+                        rng_text = "not available"
+                    prompt = (
+                        f"Lab test: {test} ({r.get('value','')} {r.get('unit','')}), status: {status_text}.\n"
+                        "Please provide the following as clear, readable English sentences: "
+                        f"1) Why Important: What is the importance of this test?\n"
+                        f"2) Reason for High: What are the common reasons for high results?\n"
+                        f"3) Reason for Low: What are the common reasons for low results?\n"
+                        f"4) Risks: What are the risks if the result is abnormal?\n"
+                        "Return a JSON object with keys: importance, reason_high, reason_low, risks."
+                    )
+                    try:
+                        completion = client.chat.completions.create(
+                            model=model,
+                            messages=[
+                                {"role": "system", "content": "You are a medical AI assistant. Return ONLY valid JSON with keys: importance, reason_high, reason_low, risks, value, unit, status. No prose."},
+                                {"role": "user", "content": prompt},
+                            ],
+                            temperature=0.2,
+                            max_tokens=400,
+                            response_format={"type": "json_object"},
+                        )
+                        content = completion.choices[0].message.content.strip()
+                        ai_data = json.loads(content)
+                        per_test_dict[test] = {
+                            "test": test,
+                            "value": r.get("value", ""),
+                            "unit": r.get("unit", ""),
+                            "status": status_text,
+                            "importance": ai_data.get("importance", ""),
+                            "reason_high": ai_data.get("reason_high", ""),
+                            "reason_low": ai_data.get("reason_low", ""),
+                            "risks": ai_data.get("risks", ""),
+                        }
+                    except Exception as e:
+                        print(f"[GROQ][per_test single LLM call] Exception for {test}: {e}")
+                        per_test_dict[test] = {
+                            "test": test,
+                            "value": r.get("value", ""),
+                            "unit": r.get("unit", ""),
+                            "status": status_text,
+                            "importance": "",
+                            "reason_high": "",
+                            "reason_low": "",
+                            "risks": "",
+                        }
+        # Overwrite per_test with the complete list in input order
+        data["per_test"] = [per_test_dict[test] for test in input_tests]
         # compose summary on top of per_test (keeps your consistent format)
         try:
             summary_text = _compose_summary(context, results, data.get("per_test", []))

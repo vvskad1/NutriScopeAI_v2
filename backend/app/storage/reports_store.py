@@ -1,4 +1,30 @@
-from __future__ import annotations
+
+import os, json
+from typing import Dict, Any, List
+from threading import RLock
+
+_REPORTS_PATH = os.path.join(os.path.dirname(__file__), "reports.json")
+
+def _load_reports():
+    if not os.path.exists(_REPORTS_PATH):
+        return {}, []
+    try:
+        with open(_REPORTS_PATH, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return data.get("store", {}), data.get("order", [])
+    except Exception:
+        return {}, []
+
+def _save_reports():
+    try:
+        with open(_REPORTS_PATH, "w", encoding="utf-8") as f:
+            json.dump({"store": _store, "order": _order}, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        print(f"[reports_store] Failed to save reports: {e}")
+
+_store, _order = _load_reports()
+_lock = RLock()
+
 def delete(rid: str) -> bool:
     """Delete a report by ID. Returns True if deleted, False if not found."""
     with _lock:
@@ -6,11 +32,9 @@ def delete(rid: str) -> bool:
             del _store[rid]
             if rid in _order:
                 _order.remove(rid)
+            _save_reports()
             return True
         return False
-
-# app/storage/reports_store.py
-
 
 def list_paginated(page: int = 1, page_size: int = 20):
     """
@@ -29,12 +53,6 @@ def list_paginated(page: int = 1, page_size: int = 20):
         page_ids = ids_desc[start:end]
         items = [_store[i] for i in page_ids]
         return total, items
-from typing import Dict, Any, List
-from threading import RLock
-
-_store: Dict[str, Dict[str, Any]] = {}
-_order: List[str] = []
-_lock = RLock()
 
 def add(doc: Dict[str, Any]) -> None:
     rid = doc.get("id") or doc.get("report_id")
@@ -45,6 +63,7 @@ def add(doc: Dict[str, Any]) -> None:
         if rid in _order:
             _order.remove(rid)
         _order.append(rid)
+        _save_reports()
 
 def get(rid: str) -> Dict[str, Any] | None:
     with _lock:

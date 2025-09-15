@@ -468,9 +468,26 @@ async def analyze_report(
     debug_rows: List[Dict[str, Any]] = []
     aliased_count = 0
 
-
-
     rag_store = get_rag_store()
+
+    # If no valid test results, block meal/summary and show message
+    if not rows or len([r for r in rows if r.get('test') and r.get('value') is not None]) == 0:
+        response = {
+            "context": {"age": age, "sex": sex, "report_name": report_name, "report_id": str(uuid.uuid4())},
+            "results": [],
+            "diet_plan": {"meals": [], "message": "Please upload a clearer PDF."},
+            "summary_text": "Please upload a clearer PDF.",
+            "per_test": [],
+            "disclaimer": _build_disclaimer(),
+            "issues": ["no_rows_parsed"],
+            "status": "needs_review",
+            "meta": {"ocr_confidence": float(locals().get("ocr_confidence", 0.0)), "analyzer_version": "v2.0.0", "groq_used": False},
+        }
+        response["id"] = response["context"]["report_id"]
+        response.setdefault("filename", file.filename or "report.pdf")
+        try: store.add(response)
+        except Exception: pass
+        return JSONResponse(status_code=200, content=response)
 
     # List of phrases to ignore as non-test rows
     IGNORE_ROW_PREFIXES = [
