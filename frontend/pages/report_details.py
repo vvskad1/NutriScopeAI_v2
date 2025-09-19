@@ -114,12 +114,36 @@ def add_meal_plan_card(rep):
         if meals:
             for meal in meals:
                 with ui.card().classes('mb-4 bg-yellow-50 border border-yellow-200'):
-                    ui.label(meal.get('name', 'Meal')).classes('font-semibold text-lg text-yellow-800')
+                    # Show meal name, and if doordash_link exists, add (Order) link in italics beside the name
+                    meal_name = meal.get('name', 'Meal')
+                    doordash_link = meal.get('doordash_link')
+                    if doordash_link:
+                        ui.html(f"<span class='font-semibold text-lg text-yellow-800'>{meal_name} <a href='{doordash_link}' target='_blank' style='color:#fbbf24;text-decoration:none;font-weight:normal;font-size:0.6em'><i>(Order)</i></a></span>")
+                    else:
+                        ui.label(meal_name).classes('font-semibold text-lg text-yellow-800')
                     ui.label('Ingredients:').classes('font-medium text-yellow-700 mt-2')
                     for ing in meal.get('ingredients', []):
-                        ui.label(f"• {ing}").classes('text-slate-700 text-left pl-4')
+                        # Robustly handle ingredient dicts and avoid any 'undefined' display
+                        ing_name = ''
+                        ing_link = None
+                        if isinstance(ing, dict):
+                            ing_name = str(ing.get('name') or '').strip()
+                            ing_link = ing.get('instacart_link')
+                        elif isinstance(ing, str):
+                            ing_name = ing.strip()
+                        # Only show if name is valid and not 'undefined'
+                        if ing_name and ing_name.lower() != 'undefined':
+                            if ing_link and 'undefined' not in ing_link:
+                                ui.html(f"<span class='text-slate-700 pl-4' style='display:block;margin-bottom:2px'>• <span>{ing_name}</span> <a href='{ing_link}' target='_blank' style='color:#6b7280;text-decoration:none;font-weight:normal;font-size:0.6em'><i>(link)</i></a></span>")
+                            else:
+                                ui.label(f"• {ing_name}").classes('text-slate-500 text-left pl-4').style('font-size:0.95em')
                     ui.label('Instructions:').classes('font-medium text-yellow-700 mt-2')
-                    ui.label(meal.get('instructions', '')).classes('text-slate-700')
+                    instructions = meal.get('instructions', '')
+                    meal_name = meal.get('name', '')
+                    yt_query = meal_name if meal_name else instructions
+                    from urllib.parse import quote_plus
+                    yt_link = f"https://www.youtube.com/results?search_query={quote_plus(yt_query)}+recipe"
+                    ui.html(f"<span class='text-slate-700'>{instructions} <a href='{yt_link}' target='_blank' style='color:#fbbf24;text-decoration:none;font-weight:normal;font-size:0.7em'><i>(link)</i></a></span>")
                     if meal.get('why_this_meal'):
                         ui.label('Why this meal:').classes('font-medium text-yellow-700 mt-2')
                         ui.label(meal['why_this_meal']).classes('text-slate-700')

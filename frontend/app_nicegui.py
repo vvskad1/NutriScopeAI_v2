@@ -8,8 +8,10 @@ import pages.reports
 import pages.upload
 import pages.signin
 import pages.signup
+
 import pages.about
 import pages.report_details
+import pages.contact
 
 from utils import api, set_user, signout
 print("Starting NiceGUI app...")

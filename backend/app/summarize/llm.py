@@ -240,6 +240,20 @@ def _fallback_summary(context: Dict[str, Any], results: List[Dict[str, Any]]) ->
 
     per = []
     fallback_meals = []
+
+    def instacart_link(ingredient):
+        from urllib.parse import quote_plus
+        name = str(ingredient).strip()
+        if not name or name.lower() == "undefined":
+            return None
+        return f"https://www.instacart.com/store/search?q={quote_plus(name)}"
+
+    def doordash_link(dish):
+        from urllib.parse import quote_plus
+        name = str(dish).strip()
+        if not name or name.lower() == "undefined":
+            return None
+        return f"https://www.doordash.com/search/store/{quote_plus(name)}"
     # Always call LLM for every test to generate all fields
     try:
         key = _get_groq_key() if "_get_groq_key" in globals() else os.getenv("GROQ_API_KEY", "").strip()
@@ -308,7 +322,10 @@ def _fallback_summary(context: Dict[str, Any], results: List[Dict[str, Any]]) ->
         if "vitamin d" in test_lc:
             fallback_meals.append({
                 "name": "Grilled Salmon with Mushrooms",
-                "ingredients": ["1 salmon fillet", "1 cup mushrooms", "1 tsp olive oil", "lemon wedge"],
+                "doordash_link": doordash_link("Grilled Salmon with Mushrooms"),
+                "ingredients": [
+                    {"name": ing, "instacart_link": instacart_link(ing)} for ing in ["1 salmon fillet", "1 cup mushrooms", "1 tsp olive oil", "lemon wedge"] if instacart_link(ing)
+                ],
                 "instructions": "Grill salmon and mushrooms, drizzle with olive oil and lemon.",
                 "why_this_meal": "Salmon and mushrooms are rich in vitamin D.",
                 "for_tests": [test]
@@ -316,7 +333,10 @@ def _fallback_summary(context: Dict[str, Any], results: List[Dict[str, Any]]) ->
         elif "b12" in test_lc:
             fallback_meals.append({
                 "name": "Egg & Cheese Breakfast Wrap",
-                "ingredients": ["2 eggs", "1 whole wheat tortilla", "1 slice cheese", "spinach"],
+                "doordash_link": doordash_link("Egg & Cheese Breakfast Wrap"),
+                "ingredients": [
+                    {"name": ing, "instacart_link": instacart_link(ing)} for ing in ["2 eggs", "1 whole wheat tortilla", "1 slice cheese", "spinach"] if instacart_link(ing)
+                ],
                 "instructions": "Scramble eggs, add cheese and spinach, wrap in tortilla.",
                 "why_this_meal": "Eggs and cheese are good sources of vitamin B12.",
                 "for_tests": [test]
@@ -324,7 +344,10 @@ def _fallback_summary(context: Dict[str, Any], results: List[Dict[str, Any]]) ->
         elif "iron" in test_lc or "hemoglobin" in test_lc or "hematocrit" in test_lc:
             fallback_meals.append({
                 "name": "Spinach & Lentil Stew",
-                "ingredients": ["1 cup cooked lentils", "2 cups spinach", "1 tomato", "onion", "spices"],
+                "doordash_link": doordash_link("Spinach & Lentil Stew"),
+                "ingredients": [
+                    {"name": ing, "instacart_link": instacart_link(ing)} for ing in ["1 cup cooked lentils", "2 cups spinach", "1 tomato", "onion", "spices"] if instacart_link(ing)
+                ],
                 "instructions": "Cook lentils, add spinach, tomato, onion, and spices. Simmer until tender.",
                 "why_this_meal": "Lentils and spinach are high in iron.",
                 "for_tests": [test]
@@ -332,7 +355,10 @@ def _fallback_summary(context: Dict[str, Any], results: List[Dict[str, Any]]) ->
         elif "calcium" in test_lc:
             fallback_meals.append({
                 "name": "Yogurt Parfait",
-                "ingredients": ["1 cup yogurt", "1/2 cup berries", "granola"],
+                "doordash_link": doordash_link("Yogurt Parfait"),
+                "ingredients": [
+                    {"name": ing, "instacart_link": instacart_link(ing)} for ing in ["1 cup yogurt", "1/2 cup berries", "granola"] if instacart_link(ing)
+                ],
                 "instructions": "Layer yogurt, berries, and granola in a glass.",
                 "why_this_meal": "Yogurt is rich in calcium.",
                 "for_tests": [test]
@@ -340,7 +366,10 @@ def _fallback_summary(context: Dict[str, Any], results: List[Dict[str, Any]]) ->
         elif "urea" in test_lc or "creatinine" in test_lc:
             fallback_meals.append({
                 "name": "Hydrating Fruit Salad",
-                "ingredients": ["1 cup watermelon", "1 cup cucumber", "mint leaves"],
+                "doordash_link": doordash_link("Hydrating Fruit Salad"),
+                "ingredients": [
+                    {"name": ing, "instacart_link": instacart_link(ing)} for ing in ["1 cup watermelon", "1 cup cucumber", "mint leaves"] if instacart_link(ing)
+                ],
                 "instructions": "Chop fruits, mix with mint, and serve chilled.",
                 "why_this_meal": "Watermelon and cucumber help with hydration, supporting kidney health.",
                 "for_tests": [test]
@@ -475,6 +504,32 @@ def _groq_structured_summary(context: Dict[str, Any], results: List[Dict[str, An
         print("[GROQ][DEBUG] LLM meal plan only:", json.dumps(meal_plan, indent=2, ensure_ascii=False))
         data.setdefault("diet_plan", {"add": [], "limit": []})
         data.setdefault("per_test", [])
+
+        # --- Add Instacart and DoorDash links to LLM meal plan output ---
+        from urllib.parse import quote_plus
+        meals = meal_plan.get("meals")
+        if isinstance(meals, list):
+            for meal in meals:
+                # Add DoorDash link for the dish
+                if meal.get("name"):
+                    meal["doordash_link"] = f"https://www.doordash.com/search/store/{quote_plus(meal['name'])}"
+                # Add Instacart link to each ingredient individually (not as a list of objects)
+                if isinstance(meal.get("ingredients"), list):
+                    valid_ings = []
+                    for ing in meal["ingredients"]:
+                        ing_name = None
+                        if isinstance(ing, dict) and "name" in ing:
+                            ing_name = str(ing["name"]).strip()
+                        elif isinstance(ing, str):
+                            ing_name = ing.strip()
+                        if ing_name and ing_name.lower() != "undefined":
+                            # Add/overwrite instacart_link directly on the dict or replace string with dict
+                            if isinstance(ing, dict):
+                                ing["instacart_link"] = f"https://www.instacart.com/store/s?k={quote_plus(ing_name)}"
+                                valid_ings.append(ing)
+                            else:
+                                valid_ings.append({"name": ing_name, "instacart_link": f"https://www.instacart.com/store/s?k={quote_plus(ing_name)}"})
+                    meal["ingredients"] = valid_ings
         # Ensure every test in the input has a per_test entry with all required fields, and all are AI-generated
         input_tests = [r["test"] for r in results]
         per_test_dict = {p.get("test"): p for p in data["per_test"]}

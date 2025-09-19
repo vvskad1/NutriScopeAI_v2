@@ -1,27 +1,822 @@
 {
   "store": {
-    "7b694a6f-0bb7-4262-811c-8fd0e571a8bc": {
+    "d2643a6c-47e0-45b5-9a69-6daa5a8217f0": {
       "context": {
-        "age": 73,
+        "age": 21,
         "sex": "Male",
-        "report_name": "CBC Old Man 2",
-        "report_id": "7b694a6f-0bb7-4262-811c-8fd0e571a8bc"
+        "report_name": "Yash Patel CBC",
+        "report_id": "d2643a6c-47e0-45b5-9a69-6daa5a8217f0"
       },
       "results": [
         {
-          "test": "White Blood Cell (wbc)",
-          "value": 6900.0,
-          "unit": "/uL",
+          "test": "Hemoglobin",
+          "value": 17.0,
+          "unit": "g/dL",
           "applied_range": {
-            "low": 4500,
-            "high": 11000,
-            "source": "KB",
+            "low": 13.0,
+            "high": 17.0,
+            "source": "PDF",
             "note": null,
-            "unit": "cells/μL (microliter)"
+            "unit": "g/dL"
           },
-          "status": "normal",
+          "status": "low",
           "source": "parsed"
         },
+        {
+          "test": "Packed Cell Volume (pcv) 57.5 High 40 -",
+          "value": 50.0,
+          "unit": "%",
+          "applied_range": {
+            "low": 40.0,
+            "high": 50.0,
+            "source": "PDF",
+            "note": null,
+            "unit": "%"
+          },
+          "status": "high",
+          "source": "parsed"
+        }
+      ],
+      "diet_plan": {
+        "meals": [
+          {
+            "name": "Iron-Rich Meal",
+            "ingredients": [
+              {
+                "name": "red meat",
+                "instacart_link": "https://www.instacart.com/store/s?k=red+meat"
+              },
+              {
+                "name": "spinach",
+                "instacart_link": "https://www.instacart.com/store/s?k=spinach"
+              },
+              {
+                "name": "beans",
+                "instacart_link": "https://www.instacart.com/store/s?k=beans"
+              },
+              {
+                "name": "lentils",
+                "instacart_link": "https://www.instacart.com/store/s?k=lentils"
+              }
+            ],
+            "instructions": "Cook the ingredients in a balanced proportion and consume with a source of vitamin C to enhance iron absorption.",
+            "why_this_meal": "To improve iron levels and help with hemoglobin production.",
+            "for_tests": [
+              "Hemoglobin"
+            ],
+            "doordash_link": "https://www.doordash.com/search/store/Iron-Rich+Meal"
+          },
+          {
+            "name": "Hydration Meal",
+            "ingredients": [
+              {
+                "name": "watermelon",
+                "instacart_link": "https://www.instacart.com/store/s?k=watermelon"
+              },
+              {
+                "name": "cucumbers",
+                "instacart_link": "https://www.instacart.com/store/s?k=cucumbers"
+              },
+              {
+                "name": "celery",
+                "instacart_link": "https://www.instacart.com/store/s?k=celery"
+              },
+              {
+                "name": "low-sodium broth",
+                "instacart_link": "https://www.instacart.com/store/s?k=low-sodium+broth"
+              }
+            ],
+            "instructions": "Consume these hydrating foods throughout the day to help maintain fluid balance.",
+            "why_this_meal": "To help evaluate and manage hydration levels, especially in cases of high packed cell volume.",
+            "for_tests": [
+              "Packed Cell Volume (pcv) 57.5 High 40 -"
+            ],
+            "doordash_link": "https://www.doordash.com/search/store/Hydration+Meal"
+          },
+          {
+            "name": "Balanced Diet Meal",
+            "ingredients": [
+              {
+                "name": "whole grains",
+                "instacart_link": "https://www.instacart.com/store/s?k=whole+grains"
+              },
+              {
+                "name": "lean proteins",
+                "instacart_link": "https://www.instacart.com/store/s?k=lean+proteins"
+              },
+              {
+                "name": "healthy fats",
+                "instacart_link": "https://www.instacart.com/store/s?k=healthy+fats"
+              },
+              {
+                "name": "variety of fruits and vegetables",
+                "instacart_link": "https://www.instacart.com/store/s?k=variety+of+fruits+and+vegetables"
+              }
+            ],
+            "instructions": "Prepare a meal that includes a balance of these food groups to support overall health.",
+            "why_this_meal": "To maintain a healthy diet that supports the management of both hemoglobin and packed cell volume levels.",
+            "for_tests": [
+              "Hemoglobin",
+              "Packed Cell Volume (pcv) 57.5 High 40 -"
+            ],
+            "doordash_link": "https://www.doordash.com/search/store/Balanced+Diet+Meal"
+          }
+        ]
+      },
+      "summary_text": "For age 21 (Male), we reviewed 11 test(s): 2 flagged. • Hemoglobin: 17.0 g/dL — low. Reference: 13.0–17.0 g/dL (KB) • Packed Cell Volume (pcv) 57.5 High 40 -: 50.0 % — high. Reference: 40.0–50.0 % (KB)",
+      "per_test": [
+        {
+          "test": "Hemoglobin",
+          "value": 17.0,
+          "unit": "g/dL",
+          "status": "low",
+          "importance": "Hemoglobin tests are crucial for diagnosing and monitoring conditions like anemia, which can significantly impact a person's quality of life and overall health.",
+          "reason_high": "Common reasons for high hemoglobin levels include dehydration, polycythemia vera, chronic lung disease, and living at high altitudes.",
+          "reason_low": "Low hemoglobin levels are often associated with iron deficiency anemia, vitamin deficiency anemia, chronic diseases like kidney disease or cancer, and blood loss due to menstruation, injury, or internal bleeding.",
+          "risks": "Abnormal hemoglobin levels can lead to symptoms such as fatigue, weakness, pale skin, and shortness of breath, and if left untreated, can increase the risk of heart problems, poor pregnancy outcomes, and impaired cognitive function."
+        },
+        {
+          "test": "Packed Cell Volume (pcv) 57.5 High 40 -",
+          "value": 50.0,
+          "unit": "%",
+          "status": "high",
+          "importance": "The Packed Cell Volume (PCV) test is important because it measures the proportion of blood volume made up by red blood cells, helping to diagnose and monitor conditions such as anemia, polycythemia, and dehydration.",
+          "reason_high": "Common reasons for high PCV results include dehydration, polycythemia vera, chronic lung disease, and excessive red blood cell production.",
+          "reason_low": "Common reasons for low PCV results include anemia, bleeding, leukemia, lymphoma, and severe infections.",
+          "risks": "Abnormal PCV results can lead to risks such as inadequate oxygen delivery to tissues, increased risk of blood clots, and impaired blood flow, which can cause symptoms like fatigue, weakness, and shortness of breath."
+        }
+      ],
+      "disclaimer": "⚠️ NutriScope is an AI-powered tool designed to help you understand your lab reports. We use standard reference ranges for children, adults, and elderly patients, which may differ slightly from your testing laboratory’s ranges. Information and diet suggestions are educational only and should not replace consultation with a qualified healthcare professional.",
+      "issues": null,
+      "status": "analyzed",
+      "meta": {
+        "ocr_confidence": 0.92,
+        "analyzer_version": "v2.0.0",
+        "groq_used": false
+      },
+      "_debug_rows": [
+        {
+          "raw": "Hemoglobin (Hb) 12.5 Low 13.0 -",
+          "kb_key_in": "hemoglobin (hb) 12.5 low 13.0 -",
+          "kb_key_resolved": "hemoglobin",
+          "value": 17.0,
+          "unit": "g/dL",
+          "status": "low",
+          "applied": {
+            "low": 13.0,
+            "high": 17.0,
+            "source": "PDF",
+            "note": null,
+            "unit": "g/dL"
+          }
+        },
+        {
+          "raw": "Packed Cell Volume (PCV) 57.5 High 40 -",
+          "kb_key_in": "packed cell volume (pcv) 57.5 high 40 -",
+          "kb_key_resolved": "packed cell volume (pcv) 57.5 high 40 -",
+          "value": 50.0,
+          "unit": "%",
+          "status": "high",
+          "applied": {
+            "low": 40.0,
+            "high": 50.0,
+            "source": "PDF",
+            "note": null,
+            "unit": "%"
+          }
+        },
+        {
+          "raw": "Mean Corpuscular Volume (MCV) 87.75 83 -",
+          "kb_key_in": "mean corpuscular volume (mcv) 87.75 83 -",
+          "kb_key_resolved": "mcv",
+          "value": 101.0,
+          "unit": "fL",
+          "status": "normal",
+          "applied": {
+            "low": 83.0,
+            "high": 101.0,
+            "source": "PDF",
+            "note": null,
+            "unit": "fL"
+          }
+        },
+        {
+          "raw": "MCH 27.2 27 -",
+          "kb_key_in": "mch 27.2 27 -",
+          "kb_key_resolved": "mch 27.2 27 -",
+          "value": 32.0,
+          "unit": "pg",
+          "status": "normal",
+          "applied": {
+            "low": 27.0,
+            "high": 32.0,
+            "source": "PDF",
+            "note": null,
+            "unit": "pg"
+          }
+        },
+        {
+          "raw": "MCHC 32.8 32.5 -",
+          "kb_key_in": "mchc 32.8 32.5 -",
+          "kb_key_resolved": "mchc 32.8 32.5 -",
+          "value": 34.5,
+          "unit": "g/dL",
+          "status": "normal",
+          "applied": {
+            "low": 32.5,
+            "high": 34.5,
+            "source": "PDF",
+            "note": null,
+            "unit": "g/dL"
+          }
+        },
+        {
+          "raw": "RDW 13.6 11.6 -",
+          "kb_key_in": "rdw 13.6 11.6 -",
+          "kb_key_resolved": "rdw 13.6 11.6 -",
+          "value": 14.0,
+          "unit": "%",
+          "status": "normal",
+          "applied": {
+            "low": 11.6,
+            "high": 14.0,
+            "source": "PDF",
+            "note": null,
+            "unit": "%"
+          }
+        },
+        {
+          "raw": "Neutrophils 60 50 -",
+          "kb_key_in": "neutrophils 60 50 -",
+          "kb_key_resolved": "neutrophils 60 50 -",
+          "value": 62.0,
+          "unit": "%",
+          "status": "normal",
+          "applied": {
+            "low": 50.0,
+            "high": 62.0,
+            "source": "PDF",
+            "note": null,
+            "unit": "%"
+          }
+        },
+        {
+          "raw": "Lymphocytes 31 20 -",
+          "kb_key_in": "lymphocytes 31 20 -",
+          "kb_key_resolved": "lymphocytes 31 20 -",
+          "value": 40.0,
+          "unit": "%",
+          "status": "normal",
+          "applied": {
+            "low": 20.0,
+            "high": 40.0,
+            "source": "PDF",
+            "note": null,
+            "unit": "%"
+          }
+        },
+        {
+          "raw": "Eosinophils 1 00 -",
+          "kb_key_in": "eosinophils 1 00 -",
+          "kb_key_resolved": "eosinophils 1 00 -",
+          "value": 6.0,
+          "unit": "%",
+          "status": "normal",
+          "applied": {
+            "low": 0.0,
+            "high": 6.0,
+            "source": "PDF",
+            "note": null,
+            "unit": "%"
+          }
+        },
+        {
+          "raw": "Monocytes 7 00 -",
+          "kb_key_in": "monocytes 7 00 -",
+          "kb_key_resolved": "monocytes 7 00 -",
+          "value": 10.0,
+          "unit": "%",
+          "status": "normal",
+          "applied": {
+            "low": 0.0,
+            "high": 10.0,
+            "source": "PDF",
+            "note": null,
+            "unit": "%"
+          }
+        },
+        {
+          "raw": "Basophils 1 00 -",
+          "kb_key_in": "basophils 1 00 -",
+          "kb_key_resolved": "basophils 1 00 -",
+          "value": 2.0,
+          "unit": "%",
+          "status": "normal",
+          "applied": {
+            "low": 0.0,
+            "high": 2.0,
+            "source": "PDF",
+            "note": null,
+            "unit": "%"
+          }
+        }
+      ],
+      "id": "d2643a6c-47e0-45b5-9a69-6daa5a8217f0",
+      "filename": "CBC-test-report-format-example-sample-template-Drlogy-lab-report.pdf"
+    },
+    "5c05fe7e-2309-4e73-ae4b-59d56d75c3fb": {
+      "context": {
+        "age": 23,
+        "sex": "Male",
+        "report_name": "Sample Report",
+        "report_id": "5c05fe7e-2309-4e73-ae4b-59d56d75c3fb"
+      },
+      "results": [
+        {
+          "test": "Vitamin D (25-oh)",
+          "value": 7.3,
+          "unit": "ng/mL",
+          "applied_range": {
+            "low": 30,
+            "high": 100,
+            "source": "KB",
+            "note": null
+          },
+          "status": "low",
+          "source": "parsed"
+        },
+        {
+          "test": "S. Calcium",
+          "value": 8.6,
+          "unit": "mg/dL",
+          "applied_range": {
+            "low": 8.8,
+            "high": 10.6,
+            "source": "PDF",
+            "note": null,
+            "unit": "mg/dL"
+          },
+          "status": "low",
+          "source": "parsed"
+        },
+        {
+          "test": "S. Bilirubin D",
+          "value": 0.24,
+          "unit": "mg/dL",
+          "applied_range": {
+            "low": null,
+            "high": 0.2,
+            "source": "PDF",
+            "note": null,
+            "unit": "mg/dL"
+          },
+          "status": "high",
+          "source": "parsed"
+        }
+      ],
+      "diet_plan": {
+        "meals": [
+          {
+            "name": "Fortified Cereal with Milk",
+            "ingredients": [
+              {
+                "name": "fortified cereal",
+                "instacart_link": "https://www.instacart.com/store/s?k=fortified+cereal"
+              },
+              {
+                "name": "milk",
+                "instacart_link": "https://www.instacart.com/store/s?k=milk"
+              },
+              {
+                "name": "fresh fruits",
+                "instacart_link": "https://www.instacart.com/store/s?k=fresh+fruits"
+              }
+            ],
+            "instructions": "Prepare a bowl of fortified cereal with milk and add fresh fruits for extra nutrition.",
+            "why_this_meal": "This meal is rich in calcium and vitamin D, which are essential for bone health.",
+            "for_tests": [
+              "Vitamin D (25-oh)",
+              "S. Calcium"
+            ],
+            "doordash_link": "https://www.doordash.com/search/store/Fortified+Cereal+with+Milk"
+          },
+          {
+            "name": "Grilled Salmon with Vegetables",
+            "ingredients": [
+              {
+                "name": "salmon fillet",
+                "instacart_link": "https://www.instacart.com/store/s?k=salmon+fillet"
+              },
+              {
+                "name": "mixed vegetables",
+                "instacart_link": "https://www.instacart.com/store/s?k=mixed+vegetables"
+              },
+              {
+                "name": "olive oil",
+                "instacart_link": "https://www.instacart.com/store/s?k=olive+oil"
+              }
+            ],
+            "instructions": "Grill a salmon fillet and serve with a variety of roasted vegetables, seasoned with olive oil.",
+            "why_this_meal": "Salmon is a good source of vitamin D, and vegetables provide essential minerals and fiber.",
+            "for_tests": [
+              "Vitamin D (25-oh)",
+              "S. Bilirubin D"
+            ],
+            "doordash_link": "https://www.doordash.com/search/store/Grilled+Salmon+with+Vegetables"
+          },
+          {
+            "name": "Yogurt Parfait with Granola",
+            "ingredients": [
+              {
+                "name": "yogurt",
+                "instacart_link": "https://www.instacart.com/store/s?k=yogurt"
+              },
+              {
+                "name": "granola",
+                "instacart_link": "https://www.instacart.com/store/s?k=granola"
+              },
+              {
+                "name": "fresh berries",
+                "instacart_link": "https://www.instacart.com/store/s?k=fresh+berries"
+              }
+            ],
+            "instructions": "Layer yogurt, granola, and fresh berries in a bowl for a nutritious and filling snack.",
+            "why_this_meal": "Yogurt is rich in calcium, and granola provides fiber and minerals, making this snack beneficial for bone health.",
+            "for_tests": [
+              "S. Calcium"
+            ],
+            "doordash_link": "https://www.doordash.com/search/store/Yogurt+Parfait+with+Granola"
+          }
+        ]
+      },
+      "summary_text": "For age 23 (Male), we reviewed 21 test(s): 3 flagged. • Vitamin D (25-oh): 7.3 ng/mL — low. Reference: 30–100 (KB) • S. Calcium: 8.6 mg/dL — low. Reference: 8.8–10.6 mg/dL (KB) • S. Bilirubin D: 0.24 mg/dL — high. Reference: None–0.2 mg/dL (KB)",
+      "per_test": [
+        {
+          "test": "Vitamin D (25-oh)",
+          "value": 7.3,
+          "unit": "ng/mL",
+          "status": "low",
+          "importance": "Vitamin D is crucial for bone health, immune function, and mood regulation, making this test important for assessing overall health and detecting deficiencies or excesses.",
+          "reason_high": "Common reasons for high Vitamin D levels include excessive dietary supplements, certain medications, and diseases like sarcoidosis or lymphoma.",
+          "reason_low": "Common reasons for low Vitamin D levels include limited sun exposure, inadequate dietary intake, kidney or liver disease, and certain medications.",
+          "risks": "Abnormal Vitamin D levels can lead to osteoporosis, increased risk of fractures, impaired immune function, and mood disorders, emphasizing the need for monitoring and adjustment of levels."
+        },
+        {
+          "test": "S. Calcium",
+          "value": 8.6,
+          "unit": "mg/dL",
+          "status": "low",
+          "importance": "The calcium test is crucial for assessing parathyroid function, bone health, and detecting conditions like hyperparathyroidism, kidney disease, and certain cancers.",
+          "reason_high": "Common reasons for high calcium levels include hyperparathyroidism, vitamin D toxicity, and certain types of cancer, such as lymphoma or multiple myeloma.",
+          "reason_low": "Low calcium levels can be caused by vitamin D deficiency, kidney failure, hypoparathyroidism, and malnutrition, as well as certain medications like anticonvulsants and bisphosphonates.",
+          "risks": "Abnormal calcium levels can lead to osteoporosis, kidney stones, cardiac arrhythmias, and in severe cases, seizures, coma, or even death if left untreated."
+        },
+        {
+          "test": "S. Bilirubin D",
+          "value": 0.24,
+          "unit": "mg/dL",
+          "status": "high",
+          "importance": "The S. Bilirubin D test is important because it helps diagnose and monitor liver and bile duct disorders, as well as hemolytic anemias.",
+          "reason_high": "Common reasons for high results include liver damage or disease, bile duct obstruction, and hemolytic anemia.",
+          "reason_low": "Common reasons for low results are not typically a cause for concern, but may indicate a healthy liver and bile duct system, or in some cases, may be seen in cases of nutritional deficiencies or certain medications.",
+          "risks": "Abnormal results may indicate an increased risk of liver disease, bile duct obstruction, or hemolytic anemia, which if left untreated, can lead to serious health complications, including liver failure, gallstones, and severe anemia."
+        }
+      ],
+      "disclaimer": "⚠️ NutriScope is an AI-powered tool designed to help you understand your lab reports. We use standard reference ranges for children, adults, and elderly patients, which may differ slightly from your testing laboratory’s ranges. Information and diet suggestions are educational only and should not replace consultation with a qualified healthcare professional.",
+      "issues": null,
+      "status": "analyzed",
+      "meta": {
+        "ocr_confidence": 0.92,
+        "analyzer_version": "v2.0.0",
+        "groq_used": false
+      },
+      "_debug_rows": [
+        {
+          "raw": "Random Blood Glucose",
+          "kb_key_in": "random blood glucose",
+          "kb_key_resolved": "random blood glucose",
+          "value": 5.055555555555555,
+          "unit": "mmol/L",
+          "status": "normal",
+          "applied": {
+            "low": 74.0,
+            "high": 140.0,
+            "source": "PDF",
+            "note": null,
+            "unit": "mg/dL"
+          }
+        },
+        {
+          "raw": "Vitamin D3",
+          "kb_key_in": "vitamin d (25-oh)",
+          "kb_key_resolved": "vitamin d (25-oh)",
+          "value": 7.3,
+          "unit": "ng/mL",
+          "status": "low",
+          "applied": {
+            "low": 30,
+            "high": 100,
+            "source": "KB",
+            "note": null
+          }
+        },
+        {
+          "raw": "Vitamin B12",
+          "kb_key_in": "vitamin b12",
+          "kb_key_resolved": "vitamin b12",
+          "value": 188.0,
+          "unit": "pg/mL",
+          "status": "normal",
+          "applied": {
+            "low": 120.0,
+            "high": 914.0,
+            "source": "PDF",
+            "note": null,
+            "unit": "pg/mL"
+          }
+        },
+        {
+          "raw": "Blood Urea",
+          "kb_key_in": "blood urea",
+          "kb_key_resolved": "blood urea",
+          "value": 27.0,
+          "unit": "mg/dL",
+          "status": "normal",
+          "applied": {
+            "low": 17.0,
+            "high": 43.0,
+            "source": "PDF",
+            "note": null,
+            "unit": "mg/dL"
+          }
+        },
+        {
+          "raw": "S.Creatinine",
+          "kb_key_in": "s.creatinine",
+          "kb_key_resolved": "s.creatinine",
+          "value": 0.9,
+          "unit": "mg/dL",
+          "status": "normal",
+          "applied": {
+            "low": 0.7,
+            "high": 1.18,
+            "source": "PDF",
+            "note": null,
+            "unit": "mg/dL"
+          }
+        },
+        {
+          "raw": "VLDL",
+          "kb_key_in": "vldl",
+          "kb_key_resolved": "vldl",
+          "value": 13.0,
+          "unit": "mg/dL",
+          "status": "normal",
+          "applied": {
+            "low": null,
+            "high": 30.0,
+            "source": "PDF",
+            "note": null,
+            "unit": "mg/dL"
+          }
+        },
+        {
+          "raw": "S. Calcium",
+          "kb_key_in": "s. calcium",
+          "kb_key_resolved": "s. calcium",
+          "value": 8.6,
+          "unit": "mg/dL",
+          "status": "low",
+          "applied": {
+            "low": 8.8,
+            "high": 10.6,
+            "source": "PDF",
+            "note": null,
+            "unit": "mg/dL"
+          }
+        },
+        {
+          "raw": "T3 - Total",
+          "kb_key_in": "t3 - total",
+          "kb_key_resolved": "t3 - total",
+          "value": 0.86,
+          "unit": "ng/mL",
+          "status": "normal",
+          "applied": {
+            "low": 0.6,
+            "high": 1.81,
+            "source": "PDF",
+            "note": null,
+            "unit": "ng/mL"
+          }
+        },
+        {
+          "raw": "Thyroid stimulating hormone (TSH)",
+          "kb_key_in": "thyroid stimulating hormone (tsh)",
+          "kb_key_resolved": "tsh",
+          "value": 3.506,
+          "unit": "uiu/ml",
+          "status": "normal",
+          "applied": {
+            "low": 0.35,
+            "high": 5.5,
+            "source": "PDF",
+            "note": null,
+            "unit": "uIU/mL"
+          }
+        },
+        {
+          "raw": "S. Bilirubin T",
+          "kb_key_in": "s. bilirubin t",
+          "kb_key_resolved": "s. bilirubin t",
+          "value": 1.08,
+          "unit": "mg/dL",
+          "status": "normal",
+          "applied": {
+            "low": 0.3,
+            "high": 1.2,
+            "source": "PDF",
+            "note": null,
+            "unit": "mg/dL"
+          }
+        },
+        {
+          "raw": "S. Bilirubin D",
+          "kb_key_in": "s. bilirubin d",
+          "kb_key_resolved": "s. bilirubin d",
+          "value": 0.24,
+          "unit": "mg/dL",
+          "status": "high",
+          "applied": {
+            "low": null,
+            "high": 0.2,
+            "source": "PDF",
+            "note": null,
+            "unit": "mg/dL"
+          }
+        },
+        {
+          "raw": "A/G Ratio",
+          "kb_key_in": "a/g ratio",
+          "kb_key_resolved": "a/g ratio",
+          "value": 1.7,
+          "unit": "unitless ratio",
+          "status": "normal",
+          "applied": {
+            "low": 1.0,
+            "high": 1.7,
+            "source": "PDF",
+            "note": null,
+            "unit": ""
+          }
+        },
+        {
+          "raw": "SGOT/AST",
+          "kb_key_in": "sgot/ast",
+          "kb_key_resolved": "sgot/ast",
+          "value": 24.0,
+          "unit": "U/L",
+          "status": "normal",
+          "applied": {
+            "low": null,
+            "high": 50.0,
+            "source": "PDF",
+            "note": null,
+            "unit": "U/L"
+          }
+        },
+        {
+          "raw": "SGPT /ALT",
+          "kb_key_in": "sgpt /alt",
+          "kb_key_resolved": "sgpt /alt",
+          "value": 22.0,
+          "unit": "U/L",
+          "status": "normal",
+          "applied": {
+            "low": null,
+            "high": 50.0,
+            "source": "PDF",
+            "note": null,
+            "unit": "U/L"
+          }
+        },
+        {
+          "raw": "S.Alkaline Phosphatase",
+          "kb_key_in": "s.alkaline phosphatase",
+          "kb_key_resolved": "s.alkaline phosphatase",
+          "value": 102.0,
+          "unit": "U/L",
+          "status": "normal",
+          "applied": {
+            "low": 30.0,
+            "high": 120.0,
+            "source": "PDF",
+            "note": null,
+            "unit": "U/L"
+          }
+        },
+        {
+          "raw": "S.Uric Acid",
+          "kb_key_in": "s.uric acid",
+          "kb_key_resolved": "s.uric acid",
+          "value": 6.1,
+          "unit": "mg/dL",
+          "status": "normal",
+          "applied": {
+            "low": 3.5,
+            "high": 7.2,
+            "source": "PDF",
+            "note": null,
+            "unit": "mg/dL"
+          }
+        },
+        {
+          "raw": "Hb",
+          "kb_key_in": "hemoglobin",
+          "kb_key_resolved": "hemoglobin",
+          "value": 16.3,
+          "unit": "g/dL",
+          "status": "normal",
+          "applied": {
+            "low": 13.0,
+            "high": 17.0,
+            "source": "PDF",
+            "note": null,
+            "unit": "g/dL"
+          }
+        },
+        {
+          "raw": "HCT",
+          "kb_key_in": "hematocrit",
+          "kb_key_resolved": "hematocrit",
+          "value": 48.4,
+          "unit": "%",
+          "status": "normal",
+          "applied": {
+            "low": 40.0,
+            "high": 50.0,
+            "source": "PDF",
+            "note": null,
+            "unit": "%"
+          }
+        },
+        {
+          "raw": "Mean Corpuscular Volume (MCV)",
+          "kb_key_in": "mcv",
+          "kb_key_resolved": "mcv",
+          "value": 92.9,
+          "unit": "fL",
+          "status": "normal",
+          "applied": {
+            "low": 83.0,
+            "high": 101.0,
+            "source": "PDF",
+            "note": null,
+            "unit": "fL"
+          }
+        },
+        {
+          "raw": "Mean Corpuscular Hemoglobin (MCH)",
+          "kb_key_in": "mch",
+          "kb_key_resolved": "mch",
+          "value": 31.3,
+          "unit": "pg",
+          "status": "normal",
+          "applied": {
+            "low": 27.0,
+            "high": 32.0,
+            "source": "PDF",
+            "note": null,
+            "unit": "pg"
+          }
+        },
+        {
+          "raw": "MCHC",
+          "kb_key_in": "mchc",
+          "kb_key_resolved": "mchc",
+          "value": 33.7,
+          "unit": "g/dL",
+          "status": "normal",
+          "applied": {
+            "low": 31.5,
+            "high": 34.5,
+            "source": "PDF",
+            "note": null,
+            "unit": "g/dl"
+          }
+        }
+      ],
+      "id": "5c05fe7e-2309-4e73-ae4b-59d56d75c3fb",
+      "filename": "SAMPLE_REPORT.pdf"
+    },
+    "9faad8f4-d790-42ec-87fa-0683fe2aa173": {
+      "context": {
+        "age": 73,
+        "sex": "Male",
+        "report_name": "CBC Old Man",
+        "report_id": "9faad8f4-d790-42ec-87fa-0683fe2aa173"
+      },
+      "results": [
         {
           "test": "Red Blood Cell (rbc)",
           "value": 1.8,
@@ -86,7 +881,7 @@
             "high": 31.0,
             "source": "KB",
             "note": null,
-            "unit": "pg/cell"
+            "unit": "pg"
           },
           "status": "high",
           "source": "parsed"
@@ -125,72 +920,109 @@
           {
             "name": "Iron-Rich Breakfast",
             "ingredients": [
-              "oatmeal",
-              "spinach",
-              "strawberries",
-              "almonds"
+              {
+                "name": "oatmeal",
+                "instacart_link": "https://www.instacart.com/store/s?k=oatmeal"
+              },
+              {
+                "name": "spinach",
+                "instacart_link": "https://www.instacart.com/store/s?k=spinach"
+              },
+              {
+                "name": "eggs",
+                "instacart_link": "https://www.instacart.com/store/s?k=eggs"
+              },
+              {
+                "name": "iron-fortified cereal",
+                "instacart_link": "https://www.instacart.com/store/s?k=iron-fortified+cereal"
+              }
             ],
-            "instructions": "Cook oatmeal with milk or water, add fresh spinach and sliced strawberries, top with almonds",
-            "why_this_meal": "To increase iron intake and support healthy red blood cells",
+            "instructions": "Cook oatmeal with milk or water and add spinach and eggs for a nutritious breakfast. Include iron-fortified cereal for an extra boost.",
+            "why_this_meal": "This meal is rich in iron, which is essential for healthy red blood cells.",
             "for_tests": [
               "Red Blood Cell (rbc)",
               "Hemoglobin",
-              "Mch"
-            ]
+              "Mcv",
+              "Mch",
+              "Mchc",
+              "Rdw"
+            ],
+            "doordash_link": "https://www.doordash.com/search/store/Iron-Rich+Breakfast"
           },
           {
-            "name": "B12 and Folate Boosting Salad",
+            "name": "B12 and Folate Salad",
             "ingredients": [
-              "mixed greens",
-              "grilled chicken",
-              "avocado",
-              "beans"
+              {
+                "name": "mixed greens",
+                "instacart_link": "https://www.instacart.com/store/s?k=mixed+greens"
+              },
+              {
+                "name": "grilled chicken",
+                "instacart_link": "https://www.instacart.com/store/s?k=grilled+chicken"
+              },
+              {
+                "name": "avocado",
+                "instacart_link": "https://www.instacart.com/store/s?k=avocado"
+              },
+              {
+                "name": "beans",
+                "instacart_link": "https://www.instacart.com/store/s?k=beans"
+              },
+              {
+                "name": "folate-rich vegetables",
+                "instacart_link": "https://www.instacart.com/store/s?k=folate-rich+vegetables"
+              }
             ],
-            "instructions": "Combine mixed greens, sliced grilled chicken, diced avocado, and canned beans, dress with olive oil and lemon juice",
-            "why_this_meal": "To support B12 and folate levels, crucial for healthy red blood cells",
+            "instructions": "Combine mixed greens, grilled chicken, avocado, beans, and folate-rich vegetables like spinach and asparagus for a nutritious salad.",
+            "why_this_meal": "This meal is rich in B12 and folate, which are crucial for the production of healthy red blood cells.",
             "for_tests": [
               "Mcv",
               "Mch",
               "Rdw"
-            ]
+            ],
+            "doordash_link": "https://www.doordash.com/search/store/B12+and+Folate+Salad"
           },
           {
-            "name": "Anemia-Fighting Soup",
+            "name": "Vitamin C and Iron Boost",
             "ingredients": [
-              "lentils",
-              "vegetables",
-              "lean beef"
+              {
+                "name": "orange juice",
+                "instacart_link": "https://www.instacart.com/store/s?k=orange+juice"
+              },
+              {
+                "name": "iron-fortified cereal",
+                "instacart_link": "https://www.instacart.com/store/s?k=iron-fortified+cereal"
+              },
+              {
+                "name": "vitamin C-rich fruits",
+                "instacart_link": "https://www.instacart.com/store/s?k=vitamin+C-rich+fruits"
+              }
             ],
-            "instructions": "Cook lentils and vegetables in a broth made with lean beef, season with herbs",
-            "why_this_meal": "To provide essential nutrients for combating anemia",
+            "instructions": "Drink a glass of orange juice with iron-fortified cereal and include vitamin C-rich fruits like strawberries and kiwis for a nutritious snack.",
+            "why_this_meal": "Vitamin C helps increase iron absorption, making this snack beneficial for individuals with low iron levels.",
             "for_tests": [
-              "Hematocrit",
-              "Mchc"
-            ]
+              "Red Blood Cell (rbc)",
+              "Hemoglobin",
+              "Mcv",
+              "Mch",
+              "Mchc",
+              "Rdw"
+            ],
+            "doordash_link": "https://www.doordash.com/search/store/Vitamin+C+and+Iron+Boost"
           }
         ]
       },
-      "summary_text": "For age 73 (Male), we reviewed 8 test(s): 7 flagged. • Red Blood Cell (rbc): 1.8 million/µl — low. Reference: 4.32–5.72 10^12/L (KB) • Hemoglobin: 6.5 g/dL — low. Reference: 13.5–17.5 g/dL (KB) • Hematocrit: 19.5 % — low. Reference: 40–54 (KB) • Mcv: 109.6 fL — high. Reference: 80–100 fL (KB) • Mch: 36.5 pg — high. Reference: 27.0–31.0 pg/cell (KB) • Mchc: 33.3 g/dL — low. Reference: 34.0–36.0 g/dL (KB) • Rdw: 16.0 % — high. Reference: 11.8–14.5 % (KB)",
+      "summary_text": "For age 73 (Male), we reviewed 8 test(s): 7 flagged. • Red Blood Cell (rbc): 1.8 million/µl — low. Reference: 4.32–5.72 10^12/L (KB) • Hemoglobin: 6.5 g/dL — low. Reference: 13.5–17.5 g/dL (KB) • Hematocrit: 19.5 % — low. Reference: 40–54 (KB) • Mcv: 109.6 fL — high. Reference: 80–100 fL (KB) • Mch: 36.5 pg — high. Reference: 27.0–31.0 pg (KB) • Mchc: 33.3 g/dL — low. Reference: 34.0–36.0 g/dL (KB) • Rdw: 16.0 % — high. Reference: 11.8–14.5 % (KB)",
       "per_test": [
-        {
-          "test": "White Blood Cell (wbc)",
-          "value": 6900.0,
-          "unit": "/uL",
-          "status": "normal",
-          "importance": "The White Blood Cell (WBC) test is important because it helps diagnose infections, inflammatory diseases, and blood disorders, allowing for timely and appropriate treatment.",
-          "reason_high": "Common reasons for high WBC results include bacterial or viral infections, inflammatory diseases, allergic reactions, and bone marrow disorders.",
-          "reason_low": "Common reasons for low WBC results include viral infections, autoimmune disorders, severe infections, and certain medications or treatments that suppress bone marrow activity.",
-          "risks": "Abnormal WBC results can lead to risks such as untreated infections, delayed diagnosis of underlying conditions, and inappropriate treatment, which can worsen the condition and lead to serious health complications."
-        },
         {
           "test": "Red Blood Cell (rbc)",
           "value": 1.8,
           "unit": "million/µl",
           "status": "low",
-          "importance": "The Red Blood Cell (RBC) test is important because it helps diagnose and monitor conditions that affect red blood cells, such as anemia, blood disorders, and nutritional deficiencies.",
+          "importance": "The Red Blood Cell (RBC) test is crucial for diagnosing and monitoring conditions that affect red blood cells, such as anemia, blood clotting disorders, and bone marrow diseases.",
           "reason_high": "Common reasons for high RBC results include dehydration, smoking, living at high altitudes, and certain medical conditions like polycythemia vera.",
-          "reason_low": "Common reasons for low RBC results include anemia, blood loss, bone marrow disorders, and certain chronic diseases like kidney disease or cancer.",
-          "risks": "Abnormal RBC results can increase the risk of fatigue, weakness, pale skin, shortness of breath, and poor oxygen delivery to organs and tissues, potentially leading to serious health complications if left untreated."
+          "reason_low": "Common reasons for low RBC results include anemia, blood loss, bone marrow failure, and certain chronic diseases like kidney disease or cancer.",
+          "risks": "Abnormal RBC results can lead to risks such as fatigue, weakness, shortness of breath, and increased risk of infections, blood clots, or heart problems if left untreated."
         },
         {
           "test": "Hemoglobin",
@@ -198,9 +1030,9 @@
           "unit": "g/dL",
           "status": "low",
           "importance": "Hemoglobin tests are crucial for diagnosing and monitoring conditions like anemia, which can lead to fatigue, weakness, and other complications if left untreated.",
-          "reason_high": "Common reasons for high hemoglobin results include dehydration, polycythemia vera, chronic obstructive pulmonary disease (COPD), and living at high altitudes.",
+          "reason_high": "Common reasons for high hemoglobin results include dehydration, polycythemia vera, chronic lung disease, and high-altitude living.",
           "reason_low": "Common reasons for low hemoglobin results include iron deficiency anemia, vitamin deficiency anemia, chronic diseases like kidney disease or cancer, and blood loss due to injury or surgery.",
-          "risks": "Abnormal hemoglobin results can lead to risks such as organ damage, poor oxygen delivery to tissues, increased risk of infections, and in severe cases, heart failure or death if left untreated."
+          "risks": "Abnormal hemoglobin results can lead to risks such as organ damage, poor wound healing, and increased susceptibility to infections, emphasizing the need for prompt medical evaluation and treatment."
         },
         {
           "test": "Hematocrit",
@@ -208,9 +1040,9 @@
           "unit": "%",
           "status": "low",
           "importance": "The hematocrit test is important because it measures the proportion of red blood cells in the blood, helping to diagnose and monitor conditions such as anemia, dehydration, and blood clotting disorders.",
-          "reason_high": "Common reasons for high hematocrit results include dehydration, polycythemia vera, chronic obstructive pulmonary disease, and living at high altitudes.",
+          "reason_high": "Common reasons for high hematocrit results include dehydration, polycythemia vera, lung disease, and living at high altitudes.",
           "reason_low": "Common reasons for low hematocrit results include anemia, blood loss, leukemia, lymphoma, and rheumatoid arthritis.",
-          "risks": "Abnormal hematocrit results can lead to risks such as inadequate oxygen delivery to tissues, increased risk of blood clots, and impaired immune function."
+          "risks": "Abnormal hematocrit results can lead to risks such as organ damage, heart problems, and increased risk of blood clots or bleeding, depending on whether the result is high or low."
         },
         {
           "test": "Mcv",
@@ -219,8 +1051,8 @@
           "status": "high",
           "importance": "The Mean Corpuscular Volume (MCV) test is important because it helps diagnose and monitor conditions affecting red blood cells, such as anemia.",
           "reason_high": "Common reasons for high MCV results include vitamin B12 or folate deficiency, alcoholism, and certain medications.",
-          "reason_low": "Common reasons for low MCV results include iron deficiency anemia, thalassemia, and chronic diseases.",
-          "risks": "Abnormal MCV results can lead to risks such as fatigue, weakness, shortness of breath, and increased risk of infections and cardiovascular disease."
+          "reason_low": "Common reasons for low MCV results include iron deficiency anemia, thalassemia, and certain chronic diseases.",
+          "risks": "Abnormal MCV results can lead to risks such as fatigue, weakness, shortness of breath, and increased risk of infections and heart problems if left untreated."
         },
         {
           "test": "Mch",
@@ -229,28 +1061,28 @@
           "status": "high",
           "importance": "The MCH test is important because it helps diagnose and monitor conditions affecting red blood cells, such as anemia, and provides insight into the body's iron storage and utilization.",
           "reason_high": "Common reasons for high MCH results include vitamin deficiency anemia, iron deficiency anemia, and other conditions that affect red blood cell production or destruction.",
-          "reason_low": "Common reasons for low MCH results include conditions that lead to smaller than normal red blood cells, such as iron deficiency anemia, thalassemia, or sideroblastic anemia.",
-          "risks": "Abnormal MCH results can indicate an increased risk of fatigue, weakness, pale skin, shortness of breath, and poor immune function, highlighting the need for further medical evaluation and potential treatment."
+          "reason_low": "Common reasons for low MCH results include conditions that lead to increased red blood cell destruction, such as hemolytic anemia, and other disorders that affect the production of red blood cells.",
+          "risks": "Abnormal MCH results can indicate underlying health issues, such as anemia, which can lead to fatigue, weakness, and other complications if left untreated, increasing the risk of cardiovascular disease, poor pregnancy outcomes, and impaired cognitive function."
         },
         {
           "test": "Mchc",
           "value": 33.3,
           "unit": "g/dL",
           "status": "low",
-          "importance": "The MCHC test is important because it helps diagnose and monitor conditions that affect red blood cells, such as anemia, and provides insight into the body's iron levels and overall health.",
-          "reason_high": "Common reasons for high MCHC results include dehydration, which can concentrate the blood, and certain medical conditions like polycythemia, a disorder characterized by an overproduction of red blood cells.",
-          "reason_low": "Common reasons for low MCHC results include iron deficiency anemia, vitamin deficiency anemia, and chronic diseases like kidney disease or cancer, which can affect the production of red blood cells and their ability to carry oxygen.",
-          "risks": "Abnormal MCHC results can indicate an increased risk of fatigue, weakness, pale skin, shortness of breath, and in severe cases, heart problems, poor pregnancy outcomes, and impaired cognitive function."
+          "importance": "The MCHC test is important because it helps diagnose and monitor conditions that affect red blood cells, such as anemia, and provides insight into the body's ability to transport oxygen to tissues.",
+          "reason_high": "Common reasons for high MCHC results include dehydration, which concentrates the blood, and certain types of anemia where the red blood cells are more concentrated than normal.",
+          "reason_low": "Common reasons for low MCHC results include iron deficiency anemia, where there is not enough iron to produce hemoglobin, and other types of anemia where the red blood cells are less concentrated than normal.",
+          "risks": "Abnormal MCHC results can indicate an increased risk of fatigue, weakness, pale skin, shortness of breath, and in severe cases, heart problems or poor pregnancy outcomes if left untreated."
         },
         {
           "test": "Rdw",
           "value": 16.0,
           "unit": "%",
           "status": "high",
-          "importance": "The RDW test is important because it helps diagnose and monitor conditions affecting red blood cells, such as anemia, by measuring the variation in red blood cell size.",
-          "reason_high": "Common reasons for high RDW results include iron deficiency anemia, vitamin deficiency anemia, and mixed anemia, as well as other conditions like chronic diseases and blood disorders.",
-          "reason_low": "A low RDW result is typically not a cause for concern and may be seen in healthy individuals or those with conditions like polycythemia, where there's an increase in red blood cell production.",
-          "risks": "Abnormal RDW results, especially high values, can indicate underlying health issues that, if left untreated, may lead to severe complications such as organ damage, poor oxygen delivery to tissues, and increased risk of infections and heart problems."
+          "importance": "The RDW test is important because it helps diagnose and monitor conditions that affect red blood cells, such as anemia, and provides insight into the uniformity of red blood cell size.",
+          "reason_high": "Common reasons for high RDW results include iron deficiency anemia, vitamin deficiency anemia, and mixed anemia, as these conditions often result in a variation of red blood cell sizes.",
+          "reason_low": "A low RDW result is less common but can be seen in cases where there is a uniformity of red blood cell size, which might not necessarily indicate a specific disease but could be related to recent blood transfusions or other factors that normalize red blood cell size distribution.",
+          "risks": "Abnormal RDW results, particularly high ones, can indicate underlying health issues such as anemia, which if left untreated, can lead to fatigue, weakness, poor immune function, and in severe cases, heart problems or other complications."
         }
       ],
       "disclaimer": "⚠️ NutriScope is an AI-powered tool designed to help you understand your lab reports. We use standard reference ranges for children, adults, and elderly patients, which may differ slightly from your testing laboratory’s ranges. Information and diet suggestions are educational only and should not replace consultation with a qualified healthcare professional.",
@@ -348,7 +1180,7 @@
             "high": 31.0,
             "source": "KB",
             "note": null,
-            "unit": "pg/cell"
+            "unit": "pg"
           }
         },
         {
@@ -382,11 +1214,13 @@
           }
         }
       ],
-      "id": "7b694a6f-0bb7-4262-811c-8fd0e571a8bc",
+      "id": "9faad8f4-d790-42ec-87fa-0683fe2aa173",
       "filename": "CBC-sample-report-with-notes_0.pdf"
     }
   },
   "order": [
-    "7b694a6f-0bb7-4262-811c-8fd0e571a8bc"
+    "d2643a6c-47e0-45b5-9a69-6daa5a8217f0",
+    "5c05fe7e-2309-4e73-ae4b-59d56d75c3fb",
+    "9faad8f4-d790-42ec-87fa-0683fe2aa173"
   ]
 }

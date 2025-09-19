@@ -57,8 +57,9 @@ def reports():
                             ui.notify('Report deleted', type='success')
                             nonlocal items
                             items = [item for item in items if (item.get('id') or item.get('report_id')) != report_id]
+                            filtered['value'] = [item for item in filtered['value'] if (item.get('id') or item.get('report_id')) != report_id]
                             dialog.close()
-                            ui.refresh()
+                            render_reports()
                         else:
                             ui.notify('Failed to delete report', type='warning')
                             dialog.close()

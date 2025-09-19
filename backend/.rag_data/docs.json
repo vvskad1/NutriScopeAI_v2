@@ -170,7 +170,7 @@
   {
     "id": "groq_mch",
     "test_name": "mch",
-    "unit": "pg/cell",
+    "unit": "pg",
     "ranges": [
       {
         "low": 27.0,
@@ -802,6 +802,34 @@
       {
         "low": 20,
         "high": 40
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_hemoglobin (hb) 12.5 low 13.0 -",
+    "test_name": "hemoglobin (hb) 12.5 low 13.0 -",
+    "unit": "g/dL",
+    "ranges": [
+      {
+        "low": 13.5,
+        "high": 17.5
+      }
+    ],
+    "source": "groq_llm",
+    "notes": "Auto-added from Groq LLM",
+    "synonyms": null
+  },
+  {
+    "id": "groq_mean corpuscular volume (mcv) 87.75 83 -",
+    "test_name": "mean corpuscular volume (mcv) 87.75 83 -",
+    "unit": "fL",
+    "ranges": [
+      {
+        "low": 83,
+        "high": 101
       }
     ],
     "source": "groq_llm",

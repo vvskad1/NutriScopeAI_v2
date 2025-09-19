@@ -93,13 +93,15 @@ def _try_line_rows(text: str) -> List[Dict[str, Any]]:
         "interpretation", "homeostasis", "the formation of", "used in diagnosis", "please correlate clinically",
         "test performed by", "method", "reference", "consultant", "specimen", "investigation", "reporting date", "sample collection", "patient name", "patient id", "op id", "lab id", "age/gender", "clinical biochemistry", "haematology", "lipid profile", "renal function test", "thyroid profile", "liver function test", "differential leukocyte count", "notes --", "end of report", "address:"
     ]
-    for raw in raw_lines:
-        line = raw.strip()
+    i = 0
+    while i < len(raw_lines):
+        line = raw_lines[i].strip()
         if not line or len(line) < 3:
+            i += 1
             continue
-        # Skip lines that are likely not test results (interpretation, comments, section headers, etc.)
         line_lc = line.lower()
         if any(kw in line_lc for kw in NON_RESULT_KEYWORDS):
+            i += 1
             continue
         # Special handling for Vitamin D3 result lines
         if re.search(r"vitamin[\s\-]*d3?", line, re.I):
@@ -108,50 +110,172 @@ def _try_line_rows(text: str) -> List[Dict[str, Any]]:
                 value = float(vd_match.group(2))
                 unit = vd_match.group(3)
                 rows.append({"test": "Vitamin D3", "value": value, "unit": unit})
+                i += 1
                 continue
-        # Skip lines that are likely reference/interpretation (e.g., 'Sufficient 30 -')
         if re.match(r"^(Sufficient|Deficient|Insufficient|Normal|Low|High)[\s\d\-]+$", line, re.I):
+            i += 1
             continue
+        flag_match = re.search(r"\b(Low|High|Normal)\b", line, re.I)
+        explicit_flag = flag_match.group(1).capitalize() if flag_match else None
+        # Try to match low-high range
+        range_match = re.search(r"([\d.]+)\s*[-–]\s*([\d.]+)\s*([a-zA-Z/%]+)?", line)
+        # Try to match single-sided range (e.g., <0.2 mg/dL, >60 mg/dL)
+        single_sided_match = re.search(r"([<>≤≥])\s*([\d.]+)\s*([a-zA-Z/%]+)?", line)
+        # Try to match banded/label ranges (e.g., Desirable Level : <200 mg/dL)
+        banded_match = re.search(r"(Desirable|Borderline|Undesirable|High|Low|Optimal|Sufficient|Insufficient|Deficient)\s*Level\s*:?\s*([<>≤≥]?)\s*([\d.]+)\s*-?\s*([\d.]*)\s*([a-zA-Z/%]+)?", line, re.I)
+        low, high, ref_unit = None, None, None
+        bands = []
+        if range_match:
+            try:
+                low = float(range_match.group(1))
+                high = float(range_match.group(2))
+                ref_unit = _clean_unit(range_match.group(3) or "")
+            except Exception:
+                pass
         m = RE_ROW.match(line)
         if m:
             d = m.groupdict()
             nm = d.get("name") or ""
             val = d.get("value")
             u = _clean_unit(d.get("unit") or "")
-            # Skip if test name is just a number, a range, or does not start with a letter
             nm_stripped = nm.strip()
             if (
                 not nm_stripped
-                or re.match(r"^[\d\s\-:.]+$", nm_stripped)  # only numbers, spaces, dashes, colons, or dots
-                or re.match(r"^[\d.]+\s*[-:]+", nm_stripped)  # starts with number and dash/colon
-                or not re.match(r"^[A-Za-z]", nm_stripped)      # does not start with a letter
+                or re.match(r"^[\d\s\-:.]+$", nm_stripped)
+                or re.match(r"^[\d.]+\s*[-:]+", nm_stripped)
+                or not re.match(r"^[A-Za-z]", nm_stripped)
             ):
+                i += 1
                 continue
             try:
                 value = float(val) if val is not None else None
             except Exception:
                 value = None
-            # If Vitamin D and unit missing, infer ng/mL if value plausible
             test_lc = nm_stripped.lower()
             if not u and ("vitamin d" in test_lc or "25-oh" in test_lc) and value is not None:
                 if 5 <= value <= 150:
                     u = "ng/mL"
                 elif 12 <= value <= 375:
                     u = "nmol/L"
-            rows.append({"test": nm_stripped, "value": value, "unit": u})
+            row = {"test": nm_stripped, "value": value, "unit": u}
+            # If there is extra text after the value/unit, check for a band/label on the same line
+            after_val = line[m.end():].strip() if m.end() < len(line) else ""
+            bands = []
+            if after_val:
+                banded_inline = re.search(r"(Desirable|Borderline|Undesirable|High|Low|Optimal|Sufficient|Insufficient|Deficient)\s*Level\s*:?\s*([<>≤≥]?)\s*([\d.]+)\s*-?\s*([\d.]*)\s*([a-zA-Z/%]+)?", after_val, re.I)
+                if banded_inline:
+                    try:
+                        label = banded_inline.group(1).capitalize()
+                        op = banded_inline.group(2)
+                        minv = banded_inline.group(3)
+                        maxv = banded_inline.group(4)
+                        bunit = _clean_unit(banded_inline.group(5) or "")
+                        band = {"label": label}
+                        if minv:
+                            band["min"] = float(minv)
+                        if maxv:
+                            band["max"] = float(maxv)
+                        if bunit:
+                            band["unit"] = bunit
+                        bands.append(band)
+                    except Exception:
+                        pass
+            # Look ahead for a range on the next line if not present on this line
+            next_line = raw_lines[i+1].strip() if i+1 < len(raw_lines) else ""
+            next_range = re.search(r"([\d.]+)\s*[-–]\s*([\d.]+)\s*([a-zA-Z/%]+)?", next_line)
+            next_single = re.search(r"([<>≤≥])\s*([\d.]+)\s*([a-zA-Z/%]+)?", next_line)
+            next_banded = re.search(r"(Desirable|Borderline|Undesirable|High|Low|Optimal|Sufficient|Insufficient|Deficient)\s*Level\s*:?\s*([<>≤≥]?)\s*([\d.]+)\s*-?\s*([\d.]*)\s*([a-zA-Z/%]+)?", next_line, re.I)
+            if low is not None and high is not None:
+                row["low"] = low
+                row["high"] = high
+                if not u and ref_unit:
+                    row["unit"] = ref_unit
+            elif single_sided_match:
+                try:
+                    op = single_sided_match.group(1)
+                    val = float(single_sided_match.group(2))
+                    sunit = _clean_unit(single_sided_match.group(3) or "")
+                    if op in ('<', '≤'):
+                        row["low"] = None
+                        row["high"] = val
+                    elif op in ('>', '≥'):
+                        row["low"] = val
+                        row["high"] = None
+                    if not u and sunit:
+                        row["unit"] = sunit
+                except Exception:
+                    pass
+            elif next_range:
+                try:
+                    row["low"] = float(next_range.group(1))
+                    row["high"] = float(next_range.group(2))
+                    nunit = _clean_unit(next_range.group(3) or "")
+                    if not u and nunit:
+                        row["unit"] = nunit
+                except Exception:
+                    pass
+                i += 1
+            elif next_single:
+                try:
+                    op = next_single.group(1)
+                    val = float(next_single.group(2))
+                    sunit = _clean_unit(next_single.group(3) or "")
+                    if op in ('<', '≤'):
+                        row["low"] = None
+                        row["high"] = val
+                    elif op in ('>', '≥'):
+                        row["low"] = val
+                        row["high"] = None
+                    if not u and sunit:
+                        row["unit"] = sunit
+                except Exception:
+                    pass
+                i += 1
+            # Parse banded/label ranges for S.HDL and similar
+            # Collect all consecutive banded/label range lines after the test value line
+            j = i+1
+            while j < len(raw_lines):
+                l2 = raw_lines[j].strip()
+                b2 = re.search(r"(Desirable|Borderline|Undesirable|High|Low|Optimal|Sufficient|Insufficient|Deficient)\s*Level\s*:?\s*([<>≤≥]?)\s*([\d.]+)\s*-?\s*([\d.]*)\s*([a-zA-Z/%]+)?", l2, re.I)
+                if b2:
+                    try:
+                        label = b2.group(1).capitalize()
+                        op = b2.group(2)
+                        minv = b2.group(3)
+                        maxv = b2.group(4)
+                        bunit = _clean_unit(b2.group(5) or "")
+                        band = {"label": label}
+                        if minv:
+                            band["min"] = float(minv)
+                        if maxv:
+                            band["max"] = float(maxv)
+                        if bunit:
+                            band["unit"] = bunit
+                        bands.append(band)
+                    except Exception:
+                        pass
+                    j += 1
+                else:
+                    break
+            if bands:
+                row["bands"] = bands
+                i = j-1
+            if explicit_flag:
+                row["explicit_flag"] = explicit_flag
+            rows.append(row)
+            i += 1
             continue
-        # FLEXIBLE: If line contains 'vitamin d' and a number, extract it even if format is nonstandard
         if re.search(r"vitamin d|25-oh", line, re.I):
             num_match = re.search(r"(\d+\.?\d*)", line)
             if num_match:
                 value = float(num_match.group(1))
                 u = ""
-                # Try to infer unit
                 if 5 <= value <= 150:
                     u = "ng/mL"
                 elif 12 <= value <= 375:
                     u = "nmol/L"
                 rows.append({"test": line, "value": value, "unit": u})
+        i += 1
     return rows
 
 def parse_pdf_bytes(pdf_bytes: bytes) -> Tuple[List[Dict[str, Any]], float]:

@@ -6,6 +6,7 @@ from fastapi import UploadFile, File, Form, HTTPException
 # --- AI Nurse Chatbot Endpoint ---
 from fastapi import Request
 from fastapi import APIRouter
+from app.api import contact_email
 from app.kb.loader import get_entry_with_rag
 from app.summarize.llm import _get_groq_key
 from groq import Groq
@@ -19,6 +20,7 @@ class ChatbotRequest(BaseModel):
     messages: List[Dict[str, str]]
 
 router = APIRouter(prefix="/api")
+router.include_router(contact_email.router)
 
 # --- Reports Endpoints (moved from report_api.py) ---
 from app.storage import reports_store as store
@@ -584,13 +586,70 @@ async def analyze_report(
             kb_unit = (kb_entry_for_unit.get("unit") or "").strip() or None
 
 
+
         norm_value, norm_unit = normalize_units_for_test(kb_key_for_unit, value, unit, kb_unit)
         # Ensure norm_value is float or None
         try:
             norm_value_f = float(norm_value) if norm_value is not None and norm_value != '' else None
         except Exception:
             norm_value_f = None
-        rs = _apply_range_and_status(kb_key_in, norm_value_f, norm_unit, age_eff, sex_eff)
+
+        # Use PDF-extracted low/high if present, else fallback to KB/LLM
+        pdf_low = row.get("low")
+        pdf_high = row.get("high")
+        explicit_flag = row.get("explicit_flag")
+        pdf_unit = (row.get("unit") or unit or "").strip()
+        value_to_compare = norm_value_f
+        # Harmonize units if needed
+        bands = row.get("bands")
+        if bands and isinstance(bands, list) and value_to_compare is not None:
+            # Use banded/label ranges for flagging
+            band_status = None
+            for band in bands:
+                bmin = band.get("min", float("-inf"))
+                bmax = band.get("max", float("inf"))
+                # If only min or max is present, handle accordingly
+                try:
+                    if bmin is not None:
+                        bmin = float(bmin)
+                except Exception:
+                    bmin = float("-inf")
+                try:
+                    if bmax is not None and bmax != '':
+                        bmax = float(bmax)
+                except Exception:
+                    bmax = float("inf")
+                if bmin <= value_to_compare <= bmax:
+                    band_status = (band.get("label") or "needs_review").lower()
+                    break
+            applied = {"bands": bands, "source": "PDF", "note": "banded", "unit": pdf_unit}
+            status = band_status or "needs_review"
+            rs = {"applied_range": applied, "status": status}
+        elif (pdf_low is not None or pdf_high is not None):
+            if norm_unit and pdf_unit and norm_unit.lower() != pdf_unit.lower():
+                try:
+                    # Only handle mg/dL <-> mmol/L for glucose for now
+                    if ("glucose" in raw_name.lower() or "glucose" in kb_key_in) and (
+                        (norm_unit.lower(), pdf_unit.lower()) in [("mmol/l", "mg/dl"), ("mg/dl", "mmol/l")]):
+                        if norm_unit.lower() == "mmol/l" and pdf_unit.lower() == "mg/dl":
+                            value_to_compare = norm_value_f * 18.0182
+                        elif norm_unit.lower() == "mg/dl" and pdf_unit.lower() == "mmol/l":
+                            value_to_compare = norm_value_f / 18.0182
+                except Exception:
+                    pass
+            applied = {"low": pdf_low, "high": pdf_high, "source": "PDF", "note": None, "unit": pdf_unit}
+            if explicit_flag:
+                status = explicit_flag.lower()
+            else:
+                status = "normal"
+                if value_to_compare is not None:
+                    if pdf_low is not None and value_to_compare < pdf_low:
+                        status = "low"
+                    elif pdf_high is not None and value_to_compare > pdf_high:
+                        status = "high"
+            rs = {"applied_range": applied, "status": status}
+        else:
+            rs = _apply_range_and_status(kb_key_in, norm_value_f, norm_unit, age_eff, sex_eff)
 
         kb_key_resolved = _resolve_kb_key(kb_key_in) or kb_key_in
         parsed_results.append({
@@ -608,7 +667,9 @@ async def analyze_report(
                 "value": norm_value, "unit": norm_unit, "status": rs["status"], "applied": rs["applied_range"],
             })
 
-    flagged_count = sum(1 for r in parsed_results if r["status"] not in ("normal", "missing", "needs_review"))
+    # Only keep abnormal results (not 'normal')
+    abnormal_results = [r for r in parsed_results if r["status"] not in ("normal", "missing", "needs_review")]
+    flagged_count = len(abnormal_results)
     if DEBUG_PARSE_ECHO:
         print(f"[DEBUG] rows_in={len(rows)} parsed={len(parsed_results)} aliased={aliased_count} flagged={flagged_count}")
         for dr in debug_rows[:30]:
@@ -616,7 +677,7 @@ async def analyze_report(
 
     # Diet suggestions (from KB only; RAG may not have advice)
     diet_add, diet_limit = [], []
-    for r in parsed_results:
+    for r in abnormal_results:
         kb_key_adv = _resolve_kb_key(r["test"].lower())
         adv = (KB.get(kb_key_adv) or {}).get("advice") or {}
         if r["status"].startswith("low") and adv.get("low"): diet_add.append(adv["low"])
@@ -624,7 +685,7 @@ async def analyze_report(
     diet_add = sorted({x for x in diet_add if x}); diet_limit = sorted({x for x in diet_limit if x})
     diet_plan = {"add": diet_add, "limit": diet_limit} if (diet_add or diet_limit) else None
 
-    structured = summarize_results_structured({"age": age_eff, "sex": sex_eff}, parsed_results) or {}
+    structured = summarize_results_structured({"age": age_eff, "sex": sex_eff}, abnormal_results) or {}
     if DEBUG_PARSE_ECHO:
         print("[DEBUG] LLM structured response:", json.dumps(structured, indent=2))
     llm_summary = structured.get("summary") or ""
@@ -728,9 +789,9 @@ async def analyze_report(
     overall_status = "analyzed" if parsed_results else "needs_review"
     response = {
         "context": {"age": age, "sex": sex, "report_name": report_name, "report_id": str(uuid.uuid4())},
-        "results": parsed_results, "diet_plan": diet_plan, "summary_text": summary_text or None,
+        "results": abnormal_results, "diet_plan": diet_plan, "summary_text": summary_text or None,
         "per_test": llm_per_test,
-        "disclaimer": _build_disclaimer(), "issues": None if parsed_results else ["no_rows_parsed"],
+        "disclaimer": _build_disclaimer(), "issues": None if abnormal_results else ["no_rows_parsed"],
         "status": overall_status,
         "meta": {"ocr_confidence": float(locals().get("ocr_confidence", 0.95)), "analyzer_version": "v2.0.0", "groq_used": groq_used},
     }

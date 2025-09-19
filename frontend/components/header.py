@@ -12,6 +12,7 @@ def header():
             ui.link('UPLOAD', '/upload').classes('text-base font-medium text-gray-700 hover:text-emerald-700 no-underline')
             ui.link('REPORTS', '/reports').classes('text-base font-medium text-gray-700 hover:text-emerald-700 no-underline')
             ui.link('ABOUT', '/about').classes('text-base font-medium text-gray-700 hover:text-emerald-700 no-underline')
+            ui.link('CONTACT', '/contact').classes('text-base font-medium text-gray-700 hover:text-emerald-700 no-underline')
         # User info and sign out right
         with ui.row().classes('gap-4 items-center'):
             user = app.storage.user.get(str('user'))
