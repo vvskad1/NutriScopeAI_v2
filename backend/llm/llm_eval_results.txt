@@ -1,0 +1,1363 @@
+Prompt: Test: Vitamin D (25-oh)
+Value: 54.79 ng/mL
+Range: 30-100
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Vitamin D is crucial for bone health, immune function, and mood regulation.
+Meal plan: Continue balanced intake of vitamin D sources.
+
+Pred: Why important: Vitamin D is crucial for bone health, immune function, and mood regulation. Reasons for high: High Vitamin D may be due to excessive supplements or certain diseases. Risks if high: High Vitamin D can cause hypercalcemia and kidney stones. Meal plan: Limit supplements, maintain moderate intake of vitamin D-rich foods.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Vitamin B12
+Value: 86.69 pg/mL
+Range: 120.0-914.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Vitamin B12 is vital for nerve function and red blood cell production.
+Reasons for low: Low B12 is often caused by poor diet or malabsorption.
+Risks if low: Low B12 can cause anemia and neuropathy.
+Meal plan: Increase animal products (meat, eggs, dairy) or fortified cereals.
+
+Pred: Why important: Vitamin B12 is vital for nerve function and red blood cell production. Reasons for low: Low B12 is often caused by poor diet or malabsorption. Risks if low: Low B12 can cause anemia and neuropathy. Meal plan: Increase animal products (meat, eggs, dairy) or fortified cereals.
+----------------------------------------
+Prompt: Test: S. Calcium
+Value: 7.13 mg/dL
+Range: 8.8-10.6
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Calcium is vital for bone health and muscle function.
+Reasons for low: Low calcium can be caused by vitamin D deficiency or kidney disease.
+Risks if low: Low calcium can cause muscle cramps and seizures.
+Meal plan: Increase dairy, leafy greens, almonds, and fortified foods.
+
+Pred: Why important: Calcium is vital for bone health and muscle function. Reasons for low: Low calcium can be caused by vitamin D deficiency or kidney disease. Risks if low: Low calcium can cause muscle cramps and seizures. Meal plan: Increase dairy, leafy greens, almonds, and fortified foods.
+----------------------------------------
+Prompt: Test: S. Calcium
+Value: 8.66 mg/dL
+Range: 8.8-10.6
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Calcium is vital for bone health and muscle function.
+Reasons for low: Low calcium can be caused by vitamin D deficiency or kidney disease.
+Risks if low: Low calcium can cause muscle cramps and seizures.
+Meal plan: Increase dairy, leafy greens, almonds, and fortified foods.
+
+Pred: Why important: Calcium is vital for bone health and muscle function. Reasons for high: High calcium may be due to hyperparathyroidism or vitamin D toxicity. Risks if high: High calcium can cause kidney stones and cardiac arrhythmias. Meal plan: Limit calcium supplements, avoid excess dairy, increase hydration.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Random Blood Glucose
+Value: 5.22 mmol/L
+Range: 4.1-7.8
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Blood glucose testing is essential for diabetes management.
+Meal plan: Balanced diet with whole grains, lean proteins, and vegetables.
+
+Pred: Why important: Blood glucose testing is essential for diabetes management. Reasons for high: High glucose may result from diabetes or stress. Risks if high: High glucose increases risk of complications. Meal plan: Limit sugars, refined carbs; increase fiber, lean proteins, and vegetables.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: S. Calcium
+Value: 11.45 mg/dL
+Range: 8.8-10.6
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Calcium is vital for bone health and muscle function.
+Reasons for high: High calcium may be due to hyperparathyroidism or vitamin D toxicity.
+Risks if high: High calcium can cause kidney stones and cardiac arrhythmias.
+Meal plan: Limit calcium supplements, avoid excess dairy, increase hydration.
+
+Pred: Why important: Calcium is vital for bone health and muscle function. Reasons for high: High calcium may be due to hyperparathyroidism or vitamin D toxicity. Risks if high: High calcium can cause kidney stones and cardiac arrhythmias. Meal plan: Limit calcium supplements, avoid excess dairy, increase hydration.
+----------------------------------------
+Prompt: Test: Platelets
+Value: 97.42 x10^3/uL
+Range: 150-400
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Platelets help with blood clotting.
+Reasons for low: Low platelets can result from viral infections, medications, or autoimmune diseases.
+Risks if low: Low platelets increase risk of bleeding.
+Meal plan: Consume foods with vitamin K (broccoli, kale), avoid alcohol.
+
+Pred: Why important: Platelets help with blood clotting. Reasons for low: Low platelets can result from viral infections, medications, or autoimmune diseases. Risks if low: Low platelets increase risk of bleeding. Meal plan: Consume foods with vitamin K (broccoli, kale), avoid alcohol.
+----------------------------------------
+Prompt: Test: Random Blood Glucose
+Value: 9.85 mmol/L
+Range: 4.1-7.8
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Blood glucose testing is essential for diabetes management.
+Reasons for high: High glucose may result from diabetes or stress.
+Risks if high: High glucose increases risk of complications.
+Meal plan: Limit sugars, refined carbs; increase fiber, lean proteins, and vegetables.
+
+Pred: Why important: Blood glucose testing is essential for diabetes management. Reasons for high: High glucose may result from diabetes or stress. Risks if high: High glucose increases risk of complications. Meal plan: Limit sugars, refined carbs; increase fiber, lean proteins, and vegetables.
+----------------------------------------
+Prompt: Test: WBC
+Value: 11.33 x10^3/uL
+Range: 4.0-10.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: White blood cells are crucial for fighting infection.
+Reasons for high: High WBC may indicate infection, inflammation, or leukemia.
+Risks if high: High WBC can signal underlying disease or infection.
+Meal plan: Focus on anti-inflammatory foods (berries, leafy greens, fatty fish).
+
+Pred: Why important: White blood cells are crucial for fighting infection. Reasons for high: High WBC may indicate infection, inflammation, or leukemia. Risks if high: High WBC can signal underlying disease or infection. Meal plan: Focus on anti-inflammatory foods (berries, leafy greens, fatty fish).
+----------------------------------------
+Prompt: Test: TSH
+Value: 6.59 uIU/mL
+Range: 0.35-5.5
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: TSH regulates thyroid function.
+Reasons for high: High TSH may indicate hypothyroidism.
+Risks if high: High TSH can cause fatigue, weight gain, and depression.
+Meal plan: Limit soy, cruciferous vegetables; increase selenium (brazil nuts, fish).
+
+Pred: Why important: TSH regulates thyroid function. Reasons for high: High TSH may indicate hypothyroidism. Risks if high: High TSH can cause fatigue, weight gain, and depression. Meal plan: Limit soy, cruciferous vegetables; increase selenium (brazil nuts, fish).
+----------------------------------------
+Prompt: Test: Platelets
+Value: 504.55 x10^3/uL
+Range: 150-400
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Platelets help with blood clotting.
+Reasons for high: High platelets may be due to inflammation, infection, or bone marrow disorders.
+Risks if high: High platelets increase risk of clotting disorders.
+Meal plan: Limit vitamin K, avoid processed foods, stay hydrated.
+
+Pred: Why important: Platelets help with blood clotting. Reasons for high: High platelets may be due to inflammation, infection, or bone marrow disorders. Risks if high: High platelets increase risk of clotting disorders. Meal plan: Limit vitamin K, avoid processed foods, stay hydrated.
+----------------------------------------
+Prompt: Test: TSH
+Value: 0.25 uIU/mL
+Range: 0.35-5.5
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: TSH regulates thyroid function.
+Reasons for low: Low TSH may indicate hyperthyroidism.
+Risks if low: Low TSH can cause anxiety, weight loss, and palpitations.
+Meal plan: Increase iodine-rich foods (seaweed, dairy, eggs).
+
+Pred: Why important: TSH regulates thyroid function. Reasons for low: Low TSH may indicate hyperthyroidism. Risks if low: Low TSH can cause anxiety, weight loss, and palpitations. Meal plan: Increase iodine-rich foods (seaweed, dairy, eggs).
+----------------------------------------
+Prompt: Test: Vitamin D (25-oh)
+Value: 22.67 ng/mL
+Range: 30-100
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Vitamin D is crucial for bone health, immune function, and mood regulation.
+Reasons for low: Low Vitamin D is often caused by limited sun exposure or poor diet.
+Risks if low: Low Vitamin D increases risk of osteoporosis and immune dysfunction.
+Meal plan: Increase sunlight exposure, consume fortified dairy, fatty fish, and mushrooms.
+
+Pred: Why important: Vitamin D is crucial for bone health, immune function, and mood regulation. Reasons for high: High Vitamin D may be due to excessive supplements or certain diseases. Risks if high: High Vitamin D can cause hypercalcemia and kidney stones. Meal plan: Limit supplements, maintain moderate intake of vitamin D-rich foods.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Random Blood Glucose
+Value: 6.05 mmol/L
+Range: 4.1-7.8
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Blood glucose testing is essential for diabetes management.
+Meal plan: Balanced diet with whole grains, lean proteins, and vegetables.
+
+Pred: Why important: Blood glucose testing is essential for diabetes management. Reasons for high: High glucose may result from diabetes or stress. Risks if high: High glucose increases risk of complications. Meal plan: Limit sugars, refined carbs; increase fiber, lean proteins, and vegetables.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Vitamin B12
+Value: 61.96 pg/mL
+Range: 120.0-914.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Vitamin B12 is vital for nerve function and red blood cell production.
+Reasons for low: Low B12 is often caused by poor diet or malabsorption.
+Risks if low: Low B12 can cause anemia and neuropathy.
+Meal plan: Increase animal products (meat, eggs, dairy) or fortified cereals.
+
+Pred: Why important: Vitamin B12 is vital for nerve function and red blood cell production. Reasons for low: Low B12 is often caused by poor diet or malabsorption. Risks if low: Low B12 can cause anemia and neuropathy. Meal plan: Increase animal products (meat, eggs, dairy) or fortified cereals.
+----------------------------------------
+Prompt: Test: Platelets
+Value: 92.73 x10^3/uL
+Range: 150-400
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Platelets help with blood clotting.
+Reasons for low: Low platelets can result from viral infections, medications, or autoimmune diseases.
+Risks if low: Low platelets increase risk of bleeding.
+Meal plan: Consume foods with vitamin K (broccoli, kale), avoid alcohol.
+
+Pred: Why important: Platelets help with blood clotting. Reasons for low: Low platelets can result from viral infections, medications, or autoimmune diseases. Risks if low: Low platelets increase risk of bleeding. Meal plan: Consume foods with vitamin K (broccoli, kale), avoid alcohol.
+----------------------------------------
+Prompt: Test: Random Blood Glucose
+Value: 11.67 mmol/L
+Range: 4.1-7.8
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Blood glucose testing is essential for diabetes management.
+Reasons for high: High glucose may result from diabetes or stress.
+Risks if high: High glucose increases risk of complications.
+Meal plan: Limit sugars, refined carbs; increase fiber, lean proteins, and vegetables.
+
+Pred: Why important: Blood glucose testing is essential for diabetes management. Reasons for high: High glucose may result from diabetes or stress. Risks if high: High glucose increases risk of complications. Meal plan: Limit sugars, refined carbs; increase fiber, lean proteins, and vegetables.
+----------------------------------------
+Prompt: Test: Platelets
+Value: 265.33 x10^3/uL
+Range: 150-400
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Platelets help with blood clotting.
+Meal plan: Balanced diet with whole grains, fruits, and vegetables.
+
+Pred: Why important: Platelets help with blood clotting. Reasons for high: High platelets may be due to inflammation, infection, or bone marrow disorders. Risks if high: High platelets increase risk of clotting disorders. Meal plan: Limit vitamin K, avoid processed foods, stay hydrated.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: S. Bilirubin D
+Value: 0.24 mg/dL
+Range: None-0.2
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Bilirubin D helps diagnose liver and bile duct disorders.
+Reasons for high: High bilirubin may be due to liver damage or obstruction.
+Risks if high: High bilirubin can cause jaundice and fatigue.
+Meal plan: Increase hydration, eat liver-supportive foods (beets, leafy greens, berries).
+
+Pred: Why important: Bilirubin D helps diagnose liver and bile duct disorders. Reasons for high: High bilirubin may be due to liver damage or obstruction. Risks if high: High bilirubin can cause jaundice and fatigue. Meal plan: Increase hydration, eat liver-supportive foods (beets, leafy greens, berries).
+----------------------------------------
+Prompt: Test: S. Bilirubin D
+Value: 0.07 mg/dL
+Range: None-0.2
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Bilirubin D helps diagnose liver and bile duct disorders.
+Meal plan: Balanced diet with fruits and vegetables.
+
+Pred: Why important: Bilirubin D helps diagnose liver and bile duct disorders. Reasons for high: High bilirubin may be due to liver damage or obstruction. Risks if high: High bilirubin can cause jaundice and fatigue. Meal plan: Increase hydration, eat liver-supportive foods (beets, leafy greens, berries).
+----------------------------------------
+Prompt: Test: Vitamin D (25-oh)
+Value: 138.48 ng/mL
+Range: 30-100
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Vitamin D is crucial for bone health, immune function, and mood regulation.
+Reasons for high: High Vitamin D may be due to excessive supplements or certain diseases.
+Risks if high: High Vitamin D can cause hypercalcemia and kidney stones.
+Meal plan: Limit supplements, maintain moderate intake of vitamin D-rich foods.
+
+Pred: Why important: Vitamin D is crucial for bone health, immune function, and mood regulation. Reasons for low: Low Vitamin D is often caused by limited sun exposure or poor diet. Risks if low: Low Vitamin D increases risk of osteoporosis and immune dysfunction. Meal plan: Increase sunlight exposure, consume fortified dairy, fatty fish, and mushrooms.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Random Blood Glucose
+Value: 7.14 mmol/L
+Range: 4.1-7.8
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Blood glucose testing is essential for diabetes management.
+Meal plan: Balanced diet with whole grains, lean proteins, and vegetables.
+
+Pred: Why important: Blood glucose testing is essential for diabetes management. Reasons for high: High glucose may result from diabetes or stress. Risks if high: High glucose increases risk of complications. Meal plan: Limit sugars, refined carbs; increase fiber, lean proteins, and vegetables.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: ALT
+Value: 47.72 U/L
+Range: 7-56
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: ALT is a liver enzyme used to assess liver health.
+Meal plan: Maintain healthy liver with balanced diet, moderate alcohol.
+
+Pred: Why important: ALT is a liver enzyme used to assess liver health. Reasons for high: High ALT may indicate liver damage, hepatitis, or fatty liver disease. Risks if high: High ALT can signal liver injury or disease. Meal plan: Limit alcohol, fried foods, and processed snacks; increase fruits and vegetables.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Hemoglobin
+Value: 22.79 g/dL
+Range: 13.0-17.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Hemoglobin is essential for oxygen transport in the blood.
+Reasons for high: High hemoglobin may be due to dehydration, lung disease, or living at high altitude.
+Risks if high: High hemoglobin can increase risk of blood clots and stroke.
+Meal plan: Stay hydrated, avoid excess iron supplements.
+
+Pred: Why important: Hemoglobin is essential for oxygen transport in the blood. Reasons for high: High hemoglobin may be due to dehydration, lung disease, or living at high altitude. Risks if high: High hemoglobin can increase risk of blood clots and stroke. Meal plan: Stay hydrated, avoid excess iron supplements.
+----------------------------------------
+Prompt: Test: ALT
+Value: 39.12 U/L
+Range: 7-56
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: ALT is a liver enzyme used to assess liver health.
+Meal plan: Maintain healthy liver with balanced diet, moderate alcohol.
+
+Pred: Why important: ALT is a liver enzyme used to assess liver health. Reasons for high: High ALT may indicate liver damage, hepatitis, or fatty liver disease. Risks if high: High ALT can signal liver injury or disease. Meal plan: Limit alcohol, fried foods, and processed snacks; increase fruits and vegetables.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Vitamin B12
+Value: 84.4 pg/mL
+Range: 120.0-914.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Vitamin B12 is vital for nerve function and red blood cell production.
+Reasons for low: Low B12 is often caused by poor diet or malabsorption.
+Risks if low: Low B12 can cause anemia and neuropathy.
+Meal plan: Increase animal products (meat, eggs, dairy) or fortified cereals.
+
+Pred: Why important: Vitamin B12 is vital for nerve function and red blood cell production. Reasons for high: High B12 may be due to supplementation or liver disease. Risks if high: High B12 is rarely harmful but may indicate disease. Meal plan: No specific dietary changes needed.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Random Blood Glucose
+Value: 4.48 mmol/L
+Range: 4.1-7.8
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Blood glucose testing is essential for diabetes management.
+Meal plan: Balanced diet with whole grains, lean proteins, and vegetables.
+
+Pred: Why important: Blood glucose testing is essential for diabetes management. Reasons for high: High glucose may result from diabetes or stress. Risks if high: High glucose increases risk of complications. Meal plan: Limit sugars, refined carbs; increase fiber, lean proteins, and vegetables.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: TSH
+Value: 0.19 uIU/mL
+Range: 0.35-5.5
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: TSH regulates thyroid function.
+Reasons for low: Low TSH may indicate hyperthyroidism.
+Risks if low: Low TSH can cause anxiety, weight loss, and palpitations.
+Meal plan: Increase iodine-rich foods (seaweed, dairy, eggs).
+
+Pred: Why important: TSH regulates thyroid function. Reasons for low: Low TSH may indicate hyperthyroidism. Risks if low: Low TSH can cause anxiety, weight loss, and palpitations. Meal plan: Increase iodine-rich foods (seaweed, dairy, eggs).
+----------------------------------------
+Prompt: Test: Vitamin B12
+Value: 76.61 pg/mL
+Range: 120.0-914.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Vitamin B12 is vital for nerve function and red blood cell production.
+Reasons for low: Low B12 is often caused by poor diet or malabsorption.
+Risks if low: Low B12 can cause anemia and neuropathy.
+Meal plan: Increase animal products (meat, eggs, dairy) or fortified cereals.
+
+Pred: Why important: Vitamin B12 is vital for nerve function and red blood cell production. Reasons for low: Low B12 is often caused by poor diet or malabsorption. Risks if low: Low B12 can cause anemia and neuropathy. Meal plan: Increase animal products (meat, eggs, dairy) or fortified cereals.
+----------------------------------------
+Prompt: Test: Hemoglobin
+Value: 13.16 g/dL
+Range: 13.0-17.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Hemoglobin is essential for oxygen transport in the blood.
+Meal plan: Maintain balanced diet with lean meats, vegetables, and grains.
+
+Pred: Why important: Hemoglobin is essential for oxygen transport in the blood. Reasons for low: Low hemoglobin is often caused by anemia, blood loss, or nutritional deficiencies. Risks if low: Low hemoglobin can cause fatigue, weakness, and shortness of breath. Meal plan: Increase iron-rich foods (red meat, spinach, lentils), vitamin C for absorption.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: TSH
+Value: 6.6 uIU/mL
+Range: 0.35-5.5
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: TSH regulates thyroid function.
+Reasons for high: High TSH may indicate hypothyroidism.
+Risks if high: High TSH can cause fatigue, weight gain, and depression.
+Meal plan: Limit soy, cruciferous vegetables; increase selenium (brazil nuts, fish).
+
+Pred: Why important: TSH regulates thyroid function. Reasons for low: Low TSH may indicate hyperthyroidism. Risks if low: Low TSH can cause anxiety, weight loss, and palpitations. Meal plan: Increase iodine-rich foods (seaweed, dairy, eggs).
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: S. Bilirubin D
+Value: 0.09 mg/dL
+Range: None-0.2
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Bilirubin D helps diagnose liver and bile duct disorders.
+Meal plan: Balanced diet with fruits and vegetables.
+
+Pred: Why important: Bilirubin D helps diagnose liver and bile duct disorders. Reasons for high: High bilirubin may be due to liver damage or obstruction. Risks if high: High bilirubin can cause jaundice and fatigue. Meal plan: Increase hydration, eat liver-supportive foods (beets, leafy greens, berries).
+----------------------------------------
+Prompt: Test: WBC
+Value: 2.46 x10^3/uL
+Range: 4.0-10.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: White blood cells are crucial for fighting infection.
+Reasons for low: Low WBC can be due to bone marrow disorders, viral infections, or medications.
+Risks if low: Low WBC increases risk of infections.
+Meal plan: Eat foods rich in zinc and vitamin C (citrus, bell peppers, nuts).
+
+Pred: Why important: White blood cells are crucial for fighting infection. Reasons for low: Low WBC can be due to bone marrow disorders, viral infections, or medications. Risks if low: Low WBC increases risk of infections. Meal plan: Eat foods rich in zinc and vitamin C (citrus, bell peppers, nuts).
+----------------------------------------
+Prompt: Test: Vitamin B12
+Value: 100.41 pg/mL
+Range: 120.0-914.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Vitamin B12 is vital for nerve function and red blood cell production.
+Reasons for low: Low B12 is often caused by poor diet or malabsorption.
+Risks if low: Low B12 can cause anemia and neuropathy.
+Meal plan: Increase animal products (meat, eggs, dairy) or fortified cereals.
+
+Pred: Why important: Vitamin B12 is vital for nerve function and red blood cell production. Reasons for high: High B12 may be due to supplementation or liver disease. Risks if high: High B12 is rarely harmful but may indicate disease. Meal plan: No specific dietary changes needed.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: WBC
+Value: 4.38 x10^3/uL
+Range: 4.0-10.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: White blood cells are crucial for fighting infection.
+Meal plan: Balanced diet with fruits, vegetables, and lean proteins.
+
+Pred: Why important: White blood cells are crucial for fighting infection. Reasons for high: High WBC may indicate infection, inflammation, or leukemia. Risks if high: High WBC can signal underlying disease or infection. Meal plan: Focus on anti-inflammatory foods (berries, leafy greens, fatty fish).
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: WBC
+Value: 5.27 x10^3/uL
+Range: 4.0-10.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: White blood cells are crucial for fighting infection.
+Meal plan: Balanced diet with fruits, vegetables, and lean proteins.
+
+Pred: Why important: White blood cells are crucial for fighting infection. Reasons for low: Low WBC can be due to bone marrow disorders, viral infections, or medications. Risks if low: Low WBC increases risk of infections. Meal plan: Eat foods rich in zinc and vitamin C (citrus, bell peppers, nuts).
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: WBC
+Value: 9.62 x10^3/uL
+Range: 4.0-10.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: White blood cells are crucial for fighting infection.
+Meal plan: Balanced diet with fruits, vegetables, and lean proteins.
+
+Pred: Why important: White blood cells are crucial for fighting infection. Reasons for high: High WBC may indicate infection, inflammation, or leukemia. Risks if high: High WBC can signal underlying disease or infection. Meal plan: Focus on anti-inflammatory foods (berries, leafy greens, fatty fish).
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Platelets
+Value: 437.06 x10^3/uL
+Range: 150-400
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Platelets help with blood clotting.
+Reasons for high: High platelets may be due to inflammation, infection, or bone marrow disorders.
+Risks if high: High platelets increase risk of clotting disorders.
+Meal plan: Limit vitamin K, avoid processed foods, stay hydrated.
+
+Pred: Why important: Platelets help with blood clotting. Reasons for high: High platelets may be due to inflammation, infection, or bone marrow disorders. Risks if high: High platelets increase risk of clotting disorders. Meal plan: Limit vitamin K, avoid processed foods, stay hydrated.
+----------------------------------------
+Prompt: Test: Platelets
+Value: 267.37 x10^3/uL
+Range: 150-400
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Platelets help with blood clotting.
+Meal plan: Balanced diet with whole grains, fruits, and vegetables.
+
+Pred: Why important: Platelets help with blood clotting. Reasons for high: High platelets may be due to inflammation, infection, or bone marrow disorders. Risks if high: High platelets increase risk of clotting disorders. Meal plan: Limit vitamin K, avoid processed foods, stay hydrated.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: TSH
+Value: 2.74 uIU/mL
+Range: 0.35-5.5
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: TSH regulates thyroid function.
+Meal plan: Balanced diet with adequate iodine and selenium.
+
+Pred: Why important: TSH regulates thyroid function. Reasons for low: Low TSH may indicate hyperthyroidism. Risks if low: Low TSH can cause anxiety, weight loss, and palpitations. Meal plan: Increase iodine-rich foods (seaweed, dairy, eggs).
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Platelets
+Value: 346.75 x10^3/uL
+Range: 150-400
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Platelets help with blood clotting.
+Meal plan: Balanced diet with whole grains, fruits, and vegetables.
+
+Pred: Why important: Platelets help with blood clotting. Reasons for low: Low platelets can result from viral infections, medications, or autoimmune diseases. Risks if low: Low platelets increase risk of bleeding. Meal plan: Consume foods with vitamin K (broccoli, kale), avoid alcohol.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: ALT
+Value: 50.72 U/L
+Range: 7-56
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: ALT is a liver enzyme used to assess liver health.
+Meal plan: Maintain healthy liver with balanced diet, moderate alcohol.
+
+Pred: Why important: ALT is a liver enzyme used to assess liver health. Reasons for high: High ALT may indicate liver damage, hepatitis, or fatty liver disease. Risks if high: High ALT can signal liver injury or disease. Meal plan: Limit alcohol, fried foods, and processed snacks; increase fruits and vegetables.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Vitamin B12
+Value: 68.47 pg/mL
+Range: 120.0-914.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Vitamin B12 is vital for nerve function and red blood cell production.
+Reasons for low: Low B12 is often caused by poor diet or malabsorption.
+Risks if low: Low B12 can cause anemia and neuropathy.
+Meal plan: Increase animal products (meat, eggs, dairy) or fortified cereals.
+
+Pred: Why important: Vitamin B12 is vital for nerve function and red blood cell production. Reasons for low: Low B12 is often caused by poor diet or malabsorption. Risks if low: Low B12 can cause anemia and neuropathy. Meal plan: Increase animal products (meat, eggs, dairy) or fortified cereals.
+----------------------------------------
+Prompt: Test: ALT
+Value: 50.55 U/L
+Range: 7-56
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: ALT is a liver enzyme used to assess liver health.
+Meal plan: Maintain healthy liver with balanced diet, moderate alcohol.
+
+Pred: Why important: ALT is a liver enzyme used to assess liver health. Reasons for high: High ALT may indicate liver damage, hepatitis, or fatty liver disease. Risks if high: High ALT can signal liver injury or disease. Meal plan: Limit alcohol, fried foods, and processed snacks; increase fruits and vegetables.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Vitamin B12
+Value: 918.22 pg/mL
+Range: 120.0-914.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Vitamin B12 is vital for nerve function and red blood cell production.
+Reasons for high: High B12 may be due to supplementation or liver disease.
+Risks if high: High B12 is rarely harmful but may indicate disease.
+Meal plan: No specific dietary changes needed.
+
+Pred: Why important: Vitamin B12 is vital for nerve function and red blood cell production. Reasons for high: High B12 may be due to supplementation or liver disease. Risks if high: High B12 is rarely harmful but may indicate disease. Meal plan: No specific dietary changes needed.
+----------------------------------------
+Prompt: Test: Hemoglobin
+Value: 21.15 g/dL
+Range: 13.0-17.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Hemoglobin is essential for oxygen transport in the blood.
+Reasons for high: High hemoglobin may be due to dehydration, lung disease, or living at high altitude.
+Risks if high: High hemoglobin can increase risk of blood clots and stroke.
+Meal plan: Stay hydrated, avoid excess iron supplements.
+
+Pred: Why important: Hemoglobin is essential for oxygen transport in the blood. Reasons for high: High hemoglobin may be due to dehydration, lung disease, or living at high altitude. Risks if high: High hemoglobin can increase risk of blood clots and stroke. Meal plan: Stay hydrated, avoid excess iron supplements.
+----------------------------------------
+Prompt: Test: TSH
+Value: 4.92 uIU/mL
+Range: 0.35-5.5
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: TSH regulates thyroid function.
+Meal plan: Balanced diet with adequate iodine and selenium.
+
+Pred: Why important: TSH regulates thyroid function. Reasons for high: High TSH may indicate hypothyroidism. Risks if high: High TSH can cause fatigue, weight gain, and depression. Meal plan: Limit soy, cruciferous vegetables; increase selenium (brazil nuts, fish).
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: S. Calcium
+Value: 4.54 mg/dL
+Range: 8.8-10.6
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Calcium is vital for bone health and muscle function.
+Reasons for low: Low calcium can be caused by vitamin D deficiency or kidney disease.
+Risks if low: Low calcium can cause muscle cramps and seizures.
+Meal plan: Increase dairy, leafy greens, almonds, and fortified foods.
+
+Pred: Why important: Calcium is vital for bone health and muscle function. Reasons for low: Low calcium can be caused by vitamin D deficiency or kidney disease. Risks if low: Low calcium can cause muscle cramps and seizures. Meal plan: Increase dairy, leafy greens, almonds, and fortified foods.
+----------------------------------------
+Prompt: Test: Platelets
+Value: 254.57 x10^3/uL
+Range: 150-400
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Platelets help with blood clotting.
+Meal plan: Balanced diet with whole grains, fruits, and vegetables.
+
+Pred: Why important: Platelets help with blood clotting. Reasons for high: High platelets may be due to inflammation, infection, or bone marrow disorders. Risks if high: High platelets increase risk of clotting disorders. Meal plan: Limit vitamin K, avoid processed foods, stay hydrated.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: S. Bilirubin D
+Value: 0.08 mg/dL
+Range: None-0.2
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Bilirubin D helps diagnose liver and bile duct disorders.
+Meal plan: Balanced diet with fruits and vegetables.
+
+Pred: Why important: Bilirubin D helps diagnose liver and bile duct disorders. Reasons for high: High bilirubin may be due to liver damage or obstruction. Risks if high: High bilirubin can cause jaundice and fatigue. Meal plan: Increase hydration, eat liver-supportive foods (beets, leafy greens, berries).
+----------------------------------------
+Prompt: Test: Vitamin D (25-oh)
+Value: 15.91 ng/mL
+Range: 30-100
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Vitamin D is crucial for bone health, immune function, and mood regulation.
+Reasons for low: Low Vitamin D is often caused by limited sun exposure or poor diet.
+Risks if low: Low Vitamin D increases risk of osteoporosis and immune dysfunction.
+Meal plan: Increase sunlight exposure, consume fortified dairy, fatty fish, and mushrooms.
+
+Pred: Why important: Vitamin D is crucial for bone health, immune function, and mood regulation. Reasons for low: Low Vitamin D is often caused by limited sun exposure or poor diet. Risks if low: Low Vitamin D increases risk of osteoporosis and immune dysfunction. Meal plan: Increase sunlight exposure, consume fortified dairy, fatty fish, and mushrooms.
+----------------------------------------
+Prompt: Test: S. Calcium
+Value: 7.02 mg/dL
+Range: 8.8-10.6
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Calcium is vital for bone health and muscle function.
+Reasons for low: Low calcium can be caused by vitamin D deficiency or kidney disease.
+Risks if low: Low calcium can cause muscle cramps and seizures.
+Meal plan: Increase dairy, leafy greens, almonds, and fortified foods.
+
+Pred: Why important: Calcium is vital for bone health and muscle function. Reasons for low: Low calcium can be caused by vitamin D deficiency or kidney disease. Risks if low: Low calcium can cause muscle cramps and seizures. Meal plan: Increase dairy, leafy greens, almonds, and fortified foods.
+----------------------------------------
+Prompt: Test: S. Calcium
+Value: 12.41 mg/dL
+Range: 8.8-10.6
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Calcium is vital for bone health and muscle function.
+Reasons for high: High calcium may be due to hyperparathyroidism or vitamin D toxicity.
+Risks if high: High calcium can cause kidney stones and cardiac arrhythmias.
+Meal plan: Limit calcium supplements, avoid excess dairy, increase hydration.
+
+Pred: Why important: Calcium is vital for bone health and muscle function. Reasons for high: High calcium may be due to hyperparathyroidism or vitamin D toxicity. Risks if high: High calcium can cause kidney stones and cardiac arrhythmias. Meal plan: Limit calcium supplements, avoid excess dairy, increase hydration.
+----------------------------------------
+Prompt: Test: Platelets
+Value: 304.02 x10^3/uL
+Range: 150-400
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Platelets help with blood clotting.
+Meal plan: Balanced diet with whole grains, fruits, and vegetables.
+
+Pred: Why important: Platelets help with blood clotting. Reasons for low: Low platelets can result from viral infections, medications, or autoimmune diseases. Risks if low: Low platelets increase risk of bleeding. Meal plan: Consume foods with vitamin K (broccoli, kale), avoid alcohol.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Vitamin B12
+Value: 68.92 pg/mL
+Range: 120.0-914.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Vitamin B12 is vital for nerve function and red blood cell production.
+Reasons for low: Low B12 is often caused by poor diet or malabsorption.
+Risks if low: Low B12 can cause anemia and neuropathy.
+Meal plan: Increase animal products (meat, eggs, dairy) or fortified cereals.
+
+Pred: Why important: Vitamin B12 is vital for nerve function and red blood cell production. Reasons for low: Low B12 is often caused by poor diet or malabsorption. Risks if low: Low B12 can cause anemia and neuropathy. Meal plan: Increase animal products (meat, eggs, dairy) or fortified cereals.
+----------------------------------------
+Prompt: Test: Random Blood Glucose
+Value: 3.2 mmol/L
+Range: 4.1-7.8
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Blood glucose testing is essential for diabetes management.
+Reasons for low: Low glucose can be due to insulin overdose or fasting.
+Risks if low: Low glucose can cause confusion and seizures.
+Meal plan: Eat frequent small meals, include complex carbs (whole grains, fruits).
+
+Pred: Why important: Blood glucose testing is essential for diabetes management. Reasons for low: Low glucose can be due to insulin overdose or fasting. Risks if low: Low glucose can cause confusion and seizures. Meal plan: Eat frequent small meals, include complex carbs (whole grains, fruits).
+----------------------------------------
+Prompt: Test: Hemoglobin
+Value: 17.87 g/dL
+Range: 13.0-17.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Hemoglobin is essential for oxygen transport in the blood.
+Reasons for high: High hemoglobin may be due to dehydration, lung disease, or living at high altitude.
+Risks if high: High hemoglobin can increase risk of blood clots and stroke.
+Meal plan: Stay hydrated, avoid excess iron supplements.
+
+Pred: Why important: Hemoglobin is essential for oxygen transport in the blood. Reasons for low: Low hemoglobin is often caused by anemia, blood loss, or nutritional deficiencies. Risks if low: Low hemoglobin can cause fatigue, weakness, and shortness of breath. Meal plan: Increase iron-rich foods (red meat, spinach, lentils), vitamin C for absorption.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: TSH
+Value: 7.45 uIU/mL
+Range: 0.35-5.5
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: TSH regulates thyroid function.
+Reasons for high: High TSH may indicate hypothyroidism.
+Risks if high: High TSH can cause fatigue, weight gain, and depression.
+Meal plan: Limit soy, cruciferous vegetables; increase selenium (brazil nuts, fish).
+
+Pred: Why important: TSH regulates thyroid function. Reasons for high: High TSH may indicate hypothyroidism. Risks if high: High TSH can cause fatigue, weight gain, and depression. Meal plan: Limit soy, cruciferous vegetables; increase selenium (brazil nuts, fish).
+----------------------------------------
+Prompt: Test: S. Calcium
+Value: 12.81 mg/dL
+Range: 8.8-10.6
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Calcium is vital for bone health and muscle function.
+Reasons for high: High calcium may be due to hyperparathyroidism or vitamin D toxicity.
+Risks if high: High calcium can cause kidney stones and cardiac arrhythmias.
+Meal plan: Limit calcium supplements, avoid excess dairy, increase hydration.
+
+Pred: Why important: Calcium is vital for bone health and muscle function. Reasons for high: High calcium may be due to hyperparathyroidism or vitamin D toxicity. Risks if high: High calcium can cause kidney stones and cardiac arrhythmias. Meal plan: Limit calcium supplements, avoid excess dairy, increase hydration.
+----------------------------------------
+Prompt: Test: WBC
+Value: 6.98 x10^3/uL
+Range: 4.0-10.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: White blood cells are crucial for fighting infection.
+Meal plan: Balanced diet with fruits, vegetables, and lean proteins.
+
+Pred: Why important: White blood cells are crucial for fighting infection. Reasons for high: High WBC may indicate infection, inflammation, or leukemia. Risks if high: High WBC can signal underlying disease or infection. Meal plan: Focus on anti-inflammatory foods (berries, leafy greens, fatty fish).
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Platelets
+Value: 99.55 x10^3/uL
+Range: 150-400
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Platelets help with blood clotting.
+Reasons for low: Low platelets can result from viral infections, medications, or autoimmune diseases.
+Risks if low: Low platelets increase risk of bleeding.
+Meal plan: Consume foods with vitamin K (broccoli, kale), avoid alcohol.
+
+Pred: Why important: Platelets help with blood clotting. Reasons for low: Low platelets can result from viral infections, medications, or autoimmune diseases. Risks if low: Low platelets increase risk of bleeding. Meal plan: Consume foods with vitamin K (broccoli, kale), avoid alcohol.
+----------------------------------------
+Prompt: Test: Platelets
+Value: 526.03 x10^3/uL
+Range: 150-400
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Platelets help with blood clotting.
+Reasons for high: High platelets may be due to inflammation, infection, or bone marrow disorders.
+Risks if high: High platelets increase risk of clotting disorders.
+Meal plan: Limit vitamin K, avoid processed foods, stay hydrated.
+
+Pred: Why important: Platelets help with blood clotting. Reasons for high: High platelets may be due to inflammation, infection, or bone marrow disorders. Risks if high: High platelets increase risk of clotting disorders. Meal plan: Limit vitamin K, avoid processed foods, stay hydrated.
+----------------------------------------
+Prompt: Test: ALT
+Value: 62.32 U/L
+Range: 7-56
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: ALT is a liver enzyme used to assess liver health.
+Reasons for high: High ALT may indicate liver damage, hepatitis, or fatty liver disease.
+Risks if high: High ALT can signal liver injury or disease.
+Meal plan: Limit alcohol, fried foods, and processed snacks; increase fruits and vegetables.
+
+Pred: Why important: ALT is a liver enzyme used to assess liver health. Reasons for high: High ALT may indicate liver damage, hepatitis, or fatty liver disease. Risks if high: High ALT can signal liver injury or disease. Meal plan: Limit alcohol, fried foods, and processed snacks; increase fruits and vegetables.
+----------------------------------------
+Prompt: Test: S. Calcium
+Value: 6.38 mg/dL
+Range: 8.8-10.6
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Calcium is vital for bone health and muscle function.
+Reasons for low: Low calcium can be caused by vitamin D deficiency or kidney disease.
+Risks if low: Low calcium can cause muscle cramps and seizures.
+Meal plan: Increase dairy, leafy greens, almonds, and fortified foods.
+
+Pred: Why important: Calcium is vital for bone health and muscle function. Reasons for low: Low calcium can be caused by vitamin D deficiency or kidney disease. Risks if low: Low calcium can cause muscle cramps and seizures. Meal plan: Increase dairy, leafy greens, almonds, and fortified foods.
+----------------------------------------
+Prompt: Test: Platelets
+Value: 411.4 x10^3/uL
+Range: 150-400
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Platelets help with blood clotting.
+Reasons for high: High platelets may be due to inflammation, infection, or bone marrow disorders.
+Risks if high: High platelets increase risk of clotting disorders.
+Meal plan: Limit vitamin K, avoid processed foods, stay hydrated.
+
+Pred: Why important: Platelets help with blood clotting. Reasons for high: High platelets may be due to inflammation, infection, or bone marrow disorders. Risks if high: High platelets increase risk of clotting disorders. Meal plan: Limit vitamin K, avoid processed foods, stay hydrated.
+----------------------------------------
+Prompt: Test: Vitamin D (25-oh)
+Value: 71.16 ng/mL
+Range: 30-100
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Vitamin D is crucial for bone health, immune function, and mood regulation.
+Meal plan: Continue balanced intake of vitamin D sources.
+
+Pred: Why important: Vitamin D is crucial for bone health, immune function, and mood regulation. Reasons for low: Low Vitamin D is often caused by limited sun exposure or poor diet. Risks if low: Low Vitamin D increases risk of osteoporosis and immune dysfunction. Meal plan: Increase sunlight exposure, consume fortified dairy, fatty fish, and mushrooms.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Vitamin B12
+Value: 382.51 pg/mL
+Range: 120.0-914.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Vitamin B12 is vital for nerve function and red blood cell production.
+Meal plan: Maintain regular intake of B12-rich foods.
+
+Pred: Why important: Vitamin B12 is vital for nerve function and red blood cell production. Reasons for high: High B12 may be due to supplementation or liver disease. Risks if high: High B12 is rarely harmful but may indicate disease. Meal plan: No specific dietary changes needed.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: S. Bilirubin D
+Value: 0.17 mg/dL
+Range: None-0.2
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Bilirubin D helps diagnose liver and bile duct disorders.
+Meal plan: Balanced diet with fruits and vegetables.
+
+Pred: Why important: Bilirubin D helps diagnose liver and bile duct disorders. Reasons for high: High bilirubin may be due to liver damage or obstruction. Risks if high: High bilirubin can cause jaundice and fatigue. Meal plan: Increase hydration, eat liver-supportive foods (beets, leafy greens, berries).
+----------------------------------------
+Prompt: Test: Platelets
+Value: 106.23 x10^3/uL
+Range: 150-400
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Platelets help with blood clotting.
+Reasons for low: Low platelets can result from viral infections, medications, or autoimmune diseases.
+Risks if low: Low platelets increase risk of bleeding.
+Meal plan: Consume foods with vitamin K (broccoli, kale), avoid alcohol.
+
+Pred: Why important: Platelets help with blood clotting. Reasons for low: Low platelets can result from viral infections, medications, or autoimmune diseases. Risks if low: Low platelets increase risk of bleeding. Meal plan: Consume foods with vitamin K (broccoli, kale), avoid alcohol.
+----------------------------------------
+Prompt: Test: Vitamin D (25-oh)
+Value: 90.81 ng/mL
+Range: 30-100
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Vitamin D is crucial for bone health, immune function, and mood regulation.
+Meal plan: Continue balanced intake of vitamin D sources.
+
+Pred: Why important: Vitamin D is crucial for bone health, immune function, and mood regulation. Reasons for low: Low Vitamin D is often caused by limited sun exposure or poor diet. Risks if low: Low Vitamin D increases risk of osteoporosis and immune dysfunction. Meal plan: Increase sunlight exposure, consume fortified dairy, fatty fish, and mushrooms.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Hemoglobin
+Value: 14.55 g/dL
+Range: 13.0-17.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Hemoglobin is essential for oxygen transport in the blood.
+Meal plan: Maintain balanced diet with lean meats, vegetables, and grains.
+
+Pred: Why important: Hemoglobin is essential for oxygen transport in the blood. Reasons for high: High hemoglobin may be due to dehydration, lung disease, or living at high altitude. Risks if high: High hemoglobin can increase risk of blood clots and stroke. Meal plan: Stay hydrated, avoid excess iron supplements.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Random Blood Glucose
+Value: 3.95 mmol/L
+Range: 4.1-7.8
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Blood glucose testing is essential for diabetes management.
+Reasons for low: Low glucose can be due to insulin overdose or fasting.
+Risks if low: Low glucose can cause confusion and seizures.
+Meal plan: Eat frequent small meals, include complex carbs (whole grains, fruits).
+
+Pred: Why important: Blood glucose testing is essential for diabetes management. Reasons for low: Low glucose can be due to insulin overdose or fasting. Risks if low: Low glucose can cause confusion and seizures. Meal plan: Eat frequent small meals, include complex carbs (whole grains, fruits).
+----------------------------------------
+Prompt: Test: TSH
+Value: 0.89 uIU/mL
+Range: 0.35-5.5
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: TSH regulates thyroid function.
+Meal plan: Balanced diet with adequate iodine and selenium.
+
+Pred: Why important: TSH regulates thyroid function. Reasons for low: Low TSH may indicate hyperthyroidism. Risks if low: Low TSH can cause anxiety, weight loss, and palpitations. Meal plan: Increase iodine-rich foods (seaweed, dairy, eggs).
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: ALT
+Value: 10.99 U/L
+Range: 7-56
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: ALT is a liver enzyme used to assess liver health.
+Meal plan: Maintain healthy liver with balanced diet, moderate alcohol.
+
+Pred: Why important: ALT is a liver enzyme used to assess liver health. Reasons for high: High ALT may indicate liver damage, hepatitis, or fatty liver disease. Risks if high: High ALT can signal liver injury or disease. Meal plan: Limit alcohol, fried foods, and processed snacks; increase fruits and vegetables.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Platelets
+Value: 76.14 x10^3/uL
+Range: 150-400
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Platelets help with blood clotting.
+Reasons for low: Low platelets can result from viral infections, medications, or autoimmune diseases.
+Risks if low: Low platelets increase risk of bleeding.
+Meal plan: Consume foods with vitamin K (broccoli, kale), avoid alcohol.
+
+Pred: Why important: Platelets help with blood clotting. Reasons for low: Low platelets can result from viral infections, medications, or autoimmune diseases. Risks if low: Low platelets increase risk of bleeding. Meal plan: Consume foods with vitamin K (broccoli, kale), avoid alcohol.
+----------------------------------------
+Prompt: Test: Vitamin B12
+Value: 118.63 pg/mL
+Range: 120.0-914.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Vitamin B12 is vital for nerve function and red blood cell production.
+Reasons for low: Low B12 is often caused by poor diet or malabsorption.
+Risks if low: Low B12 can cause anemia and neuropathy.
+Meal plan: Increase animal products (meat, eggs, dairy) or fortified cereals.
+
+Pred: Why important: Vitamin B12 is vital for nerve function and red blood cell production. Reasons for low: Low B12 is often caused by poor diet or malabsorption. Risks if low: Low B12 can cause anemia and neuropathy. Meal plan: Increase animal products (meat, eggs, dairy) or fortified cereals.
+----------------------------------------
+Prompt: Test: Platelets
+Value: 243.63 x10^3/uL
+Range: 150-400
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Platelets help with blood clotting.
+Meal plan: Balanced diet with whole grains, fruits, and vegetables.
+
+Pred: Why important: Platelets help with blood clotting. Reasons for low: Low platelets can result from viral infections, medications, or autoimmune diseases. Risks if low: Low platelets increase risk of bleeding. Meal plan: Consume foods with vitamin K (broccoli, kale), avoid alcohol.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: TSH
+Value: 6.14 uIU/mL
+Range: 0.35-5.5
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: TSH regulates thyroid function.
+Reasons for high: High TSH may indicate hypothyroidism.
+Risks if high: High TSH can cause fatigue, weight gain, and depression.
+Meal plan: Limit soy, cruciferous vegetables; increase selenium (brazil nuts, fish).
+
+Pred: Why important: TSH regulates thyroid function. Reasons for high: High TSH may indicate hypothyroidism. Risks if high: High TSH can cause fatigue, weight gain, and depression. Meal plan: Limit soy, cruciferous vegetables; increase selenium (brazil nuts, fish).
+----------------------------------------
+Prompt: Test: Hemoglobin
+Value: 16.08 g/dL
+Range: 13.0-17.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Hemoglobin is essential for oxygen transport in the blood.
+Meal plan: Maintain balanced diet with lean meats, vegetables, and grains.
+
+Pred: Why important: Hemoglobin is essential for oxygen transport in the blood. Reasons for high: High hemoglobin may be due to dehydration, lung disease, or living at high altitude. Risks if high: High hemoglobin can increase risk of blood clots and stroke. Meal plan: Stay hydrated, avoid excess iron supplements.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Hemoglobin
+Value: 16.89 g/dL
+Range: 13.0-17.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Hemoglobin is essential for oxygen transport in the blood.
+Meal plan: Maintain balanced diet with lean meats, vegetables, and grains.
+
+Pred: Why important: Hemoglobin is essential for oxygen transport in the blood. Reasons for high: High hemoglobin may be due to dehydration, lung disease, or living at high altitude. Risks if high: High hemoglobin can increase risk of blood clots and stroke. Meal plan: Stay hydrated, avoid excess iron supplements.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Vitamin B12
+Value: 636.85 pg/mL
+Range: 120.0-914.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Vitamin B12 is vital for nerve function and red blood cell production.
+Meal plan: Maintain regular intake of B12-rich foods.
+
+Pred: Why important: Vitamin B12 is vital for nerve function and red blood cell production. Reasons for high: High B12 may be due to supplementation or liver disease. Risks if high: High B12 is rarely harmful but may indicate disease. Meal plan: No specific dietary changes needed.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: S. Bilirubin D
+Value: 0.22 mg/dL
+Range: None-0.2
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Bilirubin D helps diagnose liver and bile duct disorders.
+Reasons for high: High bilirubin may be due to liver damage or obstruction.
+Risks if high: High bilirubin can cause jaundice and fatigue.
+Meal plan: Increase hydration, eat liver-supportive foods (beets, leafy greens, berries).
+
+Pred: Why important: Bilirubin D helps diagnose liver and bile duct disorders. Reasons for high: High bilirubin may be due to liver damage or obstruction. Risks if high: High bilirubin can cause jaundice and fatigue. Meal plan: Increase hydration, eat liver-supportive foods (beets, leafy greens, berries).
+----------------------------------------
+Prompt: Test: S. Calcium
+Value: 15.01 mg/dL
+Range: 8.8-10.6
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Calcium is vital for bone health and muscle function.
+Reasons for high: High calcium may be due to hyperparathyroidism or vitamin D toxicity.
+Risks if high: High calcium can cause kidney stones and cardiac arrhythmias.
+Meal plan: Limit calcium supplements, avoid excess dairy, increase hydration.
+
+Pred: Why important: Calcium is vital for bone health and muscle function. Reasons for low: Low calcium can be caused by vitamin D deficiency or kidney disease. Risks if low: Low calcium can cause muscle cramps and seizures. Meal plan: Increase dairy, leafy greens, almonds, and fortified foods.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Platelets
+Value: 383.4 x10^3/uL
+Range: 150-400
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Platelets help with blood clotting.
+Meal plan: Balanced diet with whole grains, fruits, and vegetables.
+
+Pred: Why important: Platelets help with blood clotting. Reasons for high: High platelets may be due to inflammation, infection, or bone marrow disorders. Risks if high: High platelets increase risk of clotting disorders. Meal plan: Limit vitamin K, avoid processed foods, stay hydrated.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: WBC
+Value: 9.63 x10^3/uL
+Range: 4.0-10.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: White blood cells are crucial for fighting infection.
+Meal plan: Balanced diet with fruits, vegetables, and lean proteins.
+
+Pred: Why important: White blood cells are crucial for fighting infection. Reasons for high: High WBC may indicate infection, inflammation, or leukemia. Risks if high: High WBC can signal underlying disease or infection. Meal plan: Focus on anti-inflammatory foods (berries, leafy greens, fatty fish).
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Hemoglobin
+Value: 14.81 g/dL
+Range: 13.0-17.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Hemoglobin is essential for oxygen transport in the blood.
+Meal plan: Maintain balanced diet with lean meats, vegetables, and grains.
+
+Pred: Why important: Hemoglobin is essential for oxygen transport in the blood. Reasons for high: High hemoglobin may be due to dehydration, lung disease, or living at high altitude. Risks if high: High hemoglobin can increase risk of blood clots and stroke. Meal plan: Stay hydrated, avoid excess iron supplements.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Vitamin D (25-oh)
+Value: 122.44 ng/mL
+Range: 30-100
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Vitamin D is crucial for bone health, immune function, and mood regulation.
+Reasons for high: High Vitamin D may be due to excessive supplements or certain diseases.
+Risks if high: High Vitamin D can cause hypercalcemia and kidney stones.
+Meal plan: Limit supplements, maintain moderate intake of vitamin D-rich foods.
+
+Pred: Why important: Vitamin D is crucial for bone health, immune function, and mood regulation. Reasons for low: Low Vitamin D is often caused by limited sun exposure or poor diet. Risks if low: Low Vitamin D increases risk of osteoporosis and immune dysfunction. Meal plan: Increase sunlight exposure, consume fortified dairy, fatty fish, and mushrooms.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Vitamin D (25-oh)
+Value: 76.97 ng/mL
+Range: 30-100
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Vitamin D is crucial for bone health, immune function, and mood regulation.
+Meal plan: Continue balanced intake of vitamin D sources.
+
+Pred: Why important: Vitamin D is crucial for bone health, immune function, and mood regulation. Reasons for low: Low Vitamin D is often caused by limited sun exposure or poor diet. Risks if low: Low Vitamin D increases risk of osteoporosis and immune dysfunction. Meal plan: Increase sunlight exposure, consume fortified dairy, fatty fish, and mushrooms.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: S. Bilirubin D
+Value: 0.22 mg/dL
+Range: None-0.2
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Bilirubin D helps diagnose liver and bile duct disorders.
+Reasons for high: High bilirubin may be due to liver damage or obstruction.
+Risks if high: High bilirubin can cause jaundice and fatigue.
+Meal plan: Increase hydration, eat liver-supportive foods (beets, leafy greens, berries).
+
+Pred: Why important: Bilirubin D helps diagnose liver and bile duct disorders. Reasons for high: High bilirubin may be due to liver damage or obstruction. Risks if high: High bilirubin can cause jaundice and fatigue. Meal plan: Increase hydration, eat liver-supportive foods (beets, leafy greens, berries).
+----------------------------------------
+Prompt: Test: Vitamin B12
+Value: 265.71 pg/mL
+Range: 120.0-914.0
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Vitamin B12 is vital for nerve function and red blood cell production.
+Meal plan: Maintain regular intake of B12-rich foods.
+
+Pred: Why important: Vitamin B12 is vital for nerve function and red blood cell production. Reasons for high: High B12 may be due to supplementation or liver disease. Risks if high: High B12 is rarely harmful but may indicate disease. Meal plan: No specific dietary changes needed.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: S. Bilirubin D
+Value: 0.01 mg/dL
+Range: None-0.2
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Bilirubin D helps diagnose liver and bile duct disorders.
+Meal plan: Balanced diet with fruits and vegetables.
+
+Pred: Why important: Bilirubin D helps diagnose liver and bile duct disorders. Reasons for high: High bilirubin may be due to liver damage or obstruction. Risks if high: High bilirubin can cause jaundice and fatigue. Meal plan: Increase hydration, eat liver-supportive foods (beets, leafy greens, berries).
+----------------------------------------
+Prompt: Test: TSH
+Value: 6.83 uIU/mL
+Range: 0.35-5.5
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: TSH regulates thyroid function.
+Reasons for high: High TSH may indicate hypothyroidism.
+Risks if high: High TSH can cause fatigue, weight gain, and depression.
+Meal plan: Limit soy, cruciferous vegetables; increase selenium (brazil nuts, fish).
+
+Pred: Why important: TSH regulates thyroid function. Reasons for high: High TSH may indicate hypothyroidism. Risks if high: High TSH can cause fatigue, weight gain, and depression. Meal plan: Limit soy, cruciferous vegetables; increase selenium (brazil nuts, fish).
+----------------------------------------
+Prompt: Test: ALT
+Value: 6.11 U/L
+Range: 7-56
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: ALT is a liver enzyme used to assess liver health.
+Reasons for low: Low ALT is usually not clinically significant.
+Risks if low: Low ALT is not typically a concern.
+Meal plan: No specific dietary changes needed.
+
+Pred: Why important: ALT is a liver enzyme used to assess liver health. Reasons for high: High ALT may indicate liver damage, hepatitis, or fatty liver disease. Risks if high: High ALT can signal liver injury or disease. Meal plan: Limit alcohol, fried foods, and processed snacks; increase fruits and vegetables.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Platelets
+Value: 87.95 x10^3/uL
+Range: 150-400
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Platelets help with blood clotting.
+Reasons for low: Low platelets can result from viral infections, medications, or autoimmune diseases.
+Risks if low: Low platelets increase risk of bleeding.
+Meal plan: Consume foods with vitamin K (broccoli, kale), avoid alcohol.
+
+Pred: Why important: Platelets help with blood clotting. Reasons for low: Low platelets can result from viral infections, medications, or autoimmune diseases. Risks if low: Low platelets increase risk of bleeding. Meal plan: Consume foods with vitamin K (broccoli, kale), avoid alcohol.
+----------------------------------------
+Prompt: Test: S. Calcium
+Value: 9.15 mg/dL
+Range: 8.8-10.6
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Calcium is vital for bone health and muscle function.
+Meal plan: Maintain regular intake of calcium-rich foods.
+
+Pred: Why important: Calcium is vital for bone health and muscle function. Reasons for low: Low calcium can be caused by vitamin D deficiency or kidney disease. Risks if low: Low calcium can cause muscle cramps and seizures. Meal plan: Increase dairy, leafy greens, almonds, and fortified foods.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Platelets
+Value: 148.89 x10^3/uL
+Range: 150-400
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Platelets help with blood clotting.
+Reasons for low: Low platelets can result from viral infections, medications, or autoimmune diseases.
+Risks if low: Low platelets increase risk of bleeding.
+Meal plan: Consume foods with vitamin K (broccoli, kale), avoid alcohol.
+
+Pred: Why important: Platelets help with blood clotting. Reasons for low: Low platelets can result from viral infections, medications, or autoimmune diseases. Risks if low: Low platelets increase risk of bleeding. Meal plan: Consume foods with vitamin K (broccoli, kale), avoid alcohol.
+----------------------------------------
+Prompt: Test: ALT
+Value: 13.6 U/L
+Range: 7-56
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: ALT is a liver enzyme used to assess liver health.
+Meal plan: Maintain healthy liver with balanced diet, moderate alcohol.
+
+Pred: Why important: ALT is a liver enzyme used to assess liver health. Reasons for low: Low ALT is usually not clinically significant. Risks if low: Low ALT is not typically a concern. Meal plan: No specific dietary changes needed.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Platelets
+Value: 80.07 x10^3/uL
+Range: 150-400
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Platelets help with blood clotting.
+Reasons for low: Low platelets can result from viral infections, medications, or autoimmune diseases.
+Risks if low: Low platelets increase risk of bleeding.
+Meal plan: Consume foods with vitamin K (broccoli, kale), avoid alcohol.
+
+Pred: Why important: Platelets help with blood clotting. Reasons for high: High platelets may be due to inflammation, infection, or bone marrow disorders. Risks if high: High platelets increase risk of clotting disorders. Meal plan: Limit vitamin K, avoid processed foods, stay hydrated.
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: TSH
+Value: 4.76 uIU/mL
+Range: 0.35-5.5
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: TSH regulates thyroid function.
+Meal plan: Balanced diet with adequate iodine and selenium.
+
+Pred: Why important: TSH regulates thyroid function. Reasons for high: High TSH may indicate hypothyroidism. Risks if high: High TSH can cause fatigue, weight gain, and depression. Meal plan: Limit soy, cruciferous vegetables; increase selenium (brazil nuts, fish).
+*** STATUS MISMATCH DETECTED ***
+----------------------------------------
+Prompt: Test: Random Blood Glucose
+Value: 3.24 mmol/L
+Range: 4.1-7.8
+Why important?
+If low: reasons and risks
+If high: reasons and risks
+Meal plan recommendation?
+True: Why important: Blood glucose testing is essential for diabetes management.
+Reasons for low: Low glucose can be due to insulin overdose or fasting.
+Risks if low: Low glucose can cause confusion and seizures.
+Meal plan: Eat frequent small meals, include complex carbs (whole grains, fruits).
+
+Pred: Why important: Blood glucose testing is essential for diabetes management. Reasons for low: Low glucose can be due to insulin overdose or fasting. Risks if low: Low glucose can cause confusion and seizures. Meal plan: Eat frequent small meals, include complex carbs (whole grains, fruits).
+----------------------------------------
+Evaluated 100 samples. Status mismatches: 50

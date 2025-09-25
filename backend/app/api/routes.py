@@ -27,6 +27,11 @@ from app.storage import reports_store as store
 from fastapi import Query
 from typing import Optional
 
+@router.get("/model-info")
+def get_llm_model_info():
+    """Get information about the currently configured LLM model"""
+    return get_model_info()
+
 @router.get("/report/{rid}")
 def get_report(rid: str):
     rep = store.get(rid)
@@ -154,6 +159,7 @@ from app.normalize.unit_normalization import normalize_units_for_test
 from app.normalize.normalized_values import is_recognized_unit
 from app.kb.loader import load_kb, get_entry_with_rag
 from app.summarize.llm import summarize_results_structured, _get_groq_key
+from app.llm.unified_interface import get_structured_summary, get_model_info
 from app.rag.store import get_rag_store, RangeDoc
 import os, json
 from PyPDF2 import PdfReader
@@ -685,7 +691,8 @@ async def analyze_report(
     diet_add = sorted({x for x in diet_add if x}); diet_limit = sorted({x for x in diet_limit if x})
     diet_plan = {"add": diet_add, "limit": diet_limit} if (diet_add or diet_limit) else None
 
-    structured = summarize_results_structured({"age": age_eff, "sex": sex_eff}, abnormal_results) or {}
+    # Use unified interface to get summary (local or API based on config)
+    structured = get_structured_summary({"age": age_eff, "sex": sex_eff}, abnormal_results)
     if DEBUG_PARSE_ECHO:
         print("[DEBUG] LLM structured response:", json.dumps(structured, indent=2))
     llm_summary = structured.get("summary") or ""
@@ -755,7 +762,16 @@ async def analyze_report(
 
     # Ensure all flagged (high/low) results are present in per_test, with KB details if missing
     flagged = [r for r in parsed_results if r["status"] in ("high", "low")]
-    llm_per_test_names = {t.get("test", "").strip().lower() for t in llm_per_test}
+    
+    # Handle both list format (API) and dict format (local model)
+    if isinstance(llm_per_test, dict):
+        llm_per_test_names = {name.strip().lower() for name in llm_per_test.keys()}
+        # Convert dict to list format for compatibility
+        llm_per_test_list = list(llm_per_test.values())
+    else:
+        llm_per_test_names = {t.get("test", "").strip().lower() for t in llm_per_test}
+        llm_per_test_list = llm_per_test
+    
     for r in flagged:
         tname = (r.get("test") or "").strip().lower()
         if tname and tname not in llm_per_test_names:
@@ -767,7 +783,7 @@ async def analyze_report(
             risks_if_low = (kb_entry.get("risks_if_low") if kb_entry else []) or []
             risks_if_high = (kb_entry.get("risks_if_high") if kb_entry else []) or []
             next_steps = (kb_entry.get("next_steps") if kb_entry else []) or []
-            llm_per_test.append({
+            llm_per_test_list.append({
                 "test": r.get("test"),
                 "value": str(r.get("value", "")),
                 "unit": r.get("unit", ""),
@@ -790,7 +806,7 @@ async def analyze_report(
     response = {
         "context": {"age": age, "sex": sex, "report_name": report_name, "report_id": str(uuid.uuid4())},
         "results": abnormal_results, "diet_plan": diet_plan, "summary_text": summary_text or None,
-        "per_test": llm_per_test,
+        "per_test": llm_per_test_list,
         "disclaimer": _build_disclaimer(), "issues": None if abnormal_results else ["no_rows_parsed"],
         "status": overall_status,
         "meta": {"ocr_confidence": float(locals().get("ocr_confidence", 0.95)), "analyzer_version": "v2.0.0", "groq_used": groq_used},

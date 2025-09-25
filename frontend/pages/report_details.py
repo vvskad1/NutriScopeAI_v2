@@ -55,18 +55,32 @@ def report(rid: str):
                         reason = ''
                         if 'reason' in t and isinstance(t['reason'], str) and t['reason']:
                             reason = clean_llm_text(t['reason'])
-                        elif status_lower == 'low' and t.get('reason_low'):
-                            reason = clean_llm_text(str(t['reason_low']))
-                        elif status_lower == 'high' and t.get('reason_high'):
-                            reason = clean_llm_text(str(t['reason_high']))
+                        elif status_lower == 'low' and (t.get('reason_low') or t.get('why_low')):
+                            reason_data = t.get('reason_low') or t.get('why_low')
+                            if isinstance(reason_data, list):
+                                reason = ', '.join(reason_data)
+                            else:
+                                reason = clean_llm_text(str(reason_data))
+                        elif status_lower == 'high' and (t.get('reason_high') or t.get('why_high')):
+                            reason_data = t.get('reason_high') or t.get('why_high')
+                            if isinstance(reason_data, list):
+                                reason = ', '.join(reason_data)
+                            else:
+                                reason = clean_llm_text(str(reason_data))
                         risks = ''
                         if 'risks' in t and isinstance(t['risks'], str) and t['risks']:
                             risks = clean_llm_text(t['risks'])
                         # For legacy support, also check risks_if_low/risks_if_high
                         elif status_lower == 'low' and t.get('risks_if_low'):
-                            risks = clean_llm_text(str(t['risks_if_low']))
+                            if isinstance(t['risks_if_low'], list):
+                                risks = ', '.join(t['risks_if_low'])
+                            else:
+                                risks = clean_llm_text(str(t['risks_if_low']))
                         elif status_lower == 'high' and t.get('risks_if_high'):
-                            risks = clean_llm_text(str(t['risks_if_high']))
+                            if isinstance(t['risks_if_high'], list):
+                                risks = ', '.join(t['risks_if_high'])
+                            else:
+                                risks = clean_llm_text(str(t['risks_if_high']))
                         if (is_concatenated(reason) or is_concatenated(risks)) and not warning_shown:
                             ui.notify('⚠️ Some AI-generated text is not readable. Please try regenerating the report or contact support.', color='warning')
                             warning_shown = True
@@ -114,13 +128,12 @@ def add_meal_plan_card(rep):
         if meals:
             for meal in meals:
                 with ui.card().classes('mb-4 bg-yellow-50 border border-yellow-200'):
-                    # Show meal name, and if doordash_link exists, add (Order) link in italics beside the name
+                    # Show meal name, and if present, add YouTube link in italics beside the name
                     meal_name = meal.get('name', 'Meal')
-                    doordash_link = meal.get('doordash_link')
-                    if doordash_link:
-                        ui.html(f"<span class='font-semibold text-lg text-yellow-800'>{meal_name} <a href='{doordash_link}' target='_blank' style='color:#fbbf24;text-decoration:none;font-weight:normal;font-size:0.6em'><i>(Order)</i></a></span>")
-                    else:
-                        ui.label(meal_name).classes('font-semibold text-lg text-yellow-800')
+                    yt_query = meal_name
+                    from urllib.parse import quote_plus
+                    yt_link = f"https://www.youtube.com/results?search_query={quote_plus(yt_query)}+recipe"
+                    ui.html(f"<span class='font-semibold text-lg text-yellow-800'>{meal_name} <a href='{yt_link}' target='_blank' style='color:#fbbf24;text-decoration:none;font-weight:normal;font-size:0.6em'><i>(YouTube)</i></a></span>")
                     ui.label('Ingredients:').classes('font-medium text-yellow-700 mt-2')
                     for ing in meal.get('ingredients', []):
                         # Robustly handle ingredient dicts and avoid any 'undefined' display
@@ -134,16 +147,12 @@ def add_meal_plan_card(rep):
                         # Only show if name is valid and not 'undefined'
                         if ing_name and ing_name.lower() != 'undefined':
                             if ing_link and 'undefined' not in ing_link:
-                                ui.html(f"<span class='text-slate-700 pl-4' style='display:block;margin-bottom:2px'>• <span>{ing_name}</span> <a href='{ing_link}' target='_blank' style='color:#6b7280;text-decoration:none;font-weight:normal;font-size:0.6em'><i>(link)</i></a></span>")
+                                ui.html(f"<span class='text-slate-700 pl-4' style='display:block;margin-bottom:2px'>• <span>{ing_name}</span> <a href='{ing_link}' target='_blank' style='color:#6b7280;text-decoration:none;font-weight:normal;font-size:0.6em'><i>(purchase link)</i></a></span>")
                             else:
                                 ui.label(f"• {ing_name}").classes('text-slate-500 text-left pl-4').style('font-size:0.95em')
                     ui.label('Instructions:').classes('font-medium text-yellow-700 mt-2')
                     instructions = meal.get('instructions', '')
-                    meal_name = meal.get('name', '')
-                    yt_query = meal_name if meal_name else instructions
-                    from urllib.parse import quote_plus
-                    yt_link = f"https://www.youtube.com/results?search_query={quote_plus(yt_query)}+recipe"
-                    ui.html(f"<span class='text-slate-700'>{instructions} <a href='{yt_link}' target='_blank' style='color:#fbbf24;text-decoration:none;font-weight:normal;font-size:0.7em'><i>(link)</i></a></span>")
+                    ui.label(instructions).classes('text-slate-700')
                     if meal.get('why_this_meal'):
                         ui.label('Why this meal:').classes('font-medium text-yellow-700 mt-2')
                         ui.label(meal['why_this_meal']).classes('text-slate-700')
