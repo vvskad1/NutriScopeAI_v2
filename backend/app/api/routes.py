@@ -306,10 +306,17 @@ def _apply_range_and_status(
             kb_entry = rag_entry
             kb_key = kb_key or kb_key_in
 
-    # If still not found, or if ranges are missing/invalid, call Groq LLM for info
-    needs_llm = False
-    if not kb_entry or not kb_entry.get("ranges") or all((r.get("low") is None and r.get("high") is None) for r in kb_entry.get("ranges", [])):
-        needs_llm = True
+    # Check for hardcoded reference ranges first
+    if kb_entry and kb_entry.get("reference_ranges"):
+        # Convert hardcoded reference ranges to the expected format
+        ref_ranges = kb_entry["reference_ranges"]
+        kb_entry["ranges"] = [{"low": ref_ranges.get("low"), "high": ref_ranges.get("high")}]
+        needs_llm = False
+    else:
+        # If still not found, or if ranges are missing/invalid, call Groq LLM for info
+        needs_llm = False
+        if not kb_entry or not kb_entry.get("ranges") or all((r.get("low") is None and r.get("high") is None) for r in kb_entry.get("ranges", [])):
+            needs_llm = True
     if needs_llm:
         groq_key = _get_groq_key()
         if groq_key:

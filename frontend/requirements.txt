@@ -1,0 +1,8 @@
+# Frontend Requirements (NiceGUI)
+nicegui>=1.4.0
+requests>=2.31.0
+python-multipart>=0.0.9
+
+# Optional: Additional UI components
+matplotlib>=3.7.0
+plotly>=5.15.0
