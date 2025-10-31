@@ -29,12 +29,17 @@ def load_kb() -> Dict[str, Any]:
                     kb_dict[alias_lc] = entry
         # Add placeholder KB entries for MCV, MCH, MCHC, RDW if missing
         for missing in [
-            ("mcv", "Mean Corpuscular Volume (MCV)", "fL", "Indicates average size of red blood cells.", ["Iron deficiency", "B12/folate deficiency", "Thalassemia"], {"low": "Check iron/B12/folate; treat cause.", "high": "Assess for macrocytosis causes (B12/folate, liver, alcohol)."}),
-            ("mch", "Mean Corpuscular Hemoglobin (MCH)", "pg", "Average amount of hemoglobin per red blood cell.", ["Iron deficiency", "B12/folate deficiency"], {"low": "Check iron/B12/folate; treat cause.", "high": "Assess for macrocytosis causes."}),
-            ("mchc", "Mean Corpuscular Hemoglobin Concentration (MCHC)", "g/dL", "Average concentration of hemoglobin in red blood cells.", ["Iron deficiency", "Hereditary spherocytosis"], {"low": "Check iron; treat cause.", "high": "Assess for spherocytosis or lab artifact."}),
-            ("rdw", "Red Cell Distribution Width (RDW)", "%", "Variation in size of red blood cells; high values suggest mixed causes of anemia.", ["Iron deficiency", "B12/folate deficiency", "Recent bleeding"], {"high": "Check for mixed anemia causes; iron/B12/folate status."})
+            ("mcv", "Mean Corpuscular Volume (MCV)", "fL", "Indicates average size of red blood cells.", ["Iron deficiency", "B12/folate deficiency", "Thalassemia"], {"low": "Check iron/B12/folate; treat cause.", "high": "Assess for macrocytosis causes (B12/folate, liver, alcohol)."}, {"low": 82, "high": 98}),
+            ("mch", "Mean Corpuscular Hemoglobin (MCH)", "pg", "Average amount of hemoglobin per red blood cell.", ["Iron deficiency", "B12/folate deficiency"], {"low": "Check iron/B12/folate; treat cause.", "high": "Assess for macrocytosis causes."}, {"low": 27, "high": 33}),
+            ("mchc", "Mean Corpuscular Hemoglobin Concentration (MCHC)", "g/dL", "Average concentration of hemoglobin in red blood cells.", ["Iron deficiency", "Hereditary spherocytosis"], {"low": "Check iron; treat cause.", "high": "Assess for spherocytosis or lab artifact."}, {"low": 32, "high": 36}),
+            ("rdw", "Red Cell Distribution Width (RDW)", "%", "Variation in size of red blood cells; high values suggest mixed causes of anemia.", ["Iron deficiency", "B12/folate deficiency", "Recent bleeding"], {"high": "Check for mixed anemia causes; iron/B12/folate status."}, {"low": 11.5, "high": 14.5})
         ]:
-            key, pretty, unit, importance, causes, advice = missing
+            if len(missing) > 6:
+                key, pretty, unit, importance, causes, advice, reference_ranges = missing
+            else:
+                key, pretty, unit, importance, causes, advice = missing
+                reference_ranges = None
+                
             if key not in kb_dict:
                 kb_dict[key] = {
                     "test_name": pretty,
@@ -43,6 +48,9 @@ def load_kb() -> Dict[str, Any]:
                     "causes": causes,
                     "advice": advice
                 }
+                # Add reference ranges if provided
+                if reference_ranges:
+                    kb_dict[key]["reference_ranges"] = reference_ranges
         return kb_dict
     out: Dict[str, Any] = {}
     for k, v in data.items():

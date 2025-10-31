@@ -85,3 +85,22 @@ Thumbs.db
 /test_reports/
 backend/app/api/users.json
 backend/app/storage/reports.json
+
+# Environment variables
+.env
+*.env
+
+# NiceGUI storage
+.nicegui/
+
+# Model files (too large for git)
+backend/llm/results/
+backend/llm/preprocessed_dataset/
+backend/llm/logs/
+backend/llm/trained_llm_model_t5/
+
+# Hugging Face tokens
+*token*.txt
+
+# Pretrained inference cache
+backend/pretrained_inference/
